@@ -52,10 +52,28 @@ class Student(BaseClient):
 		self.__marks.append(marks)
 
 	def get_name(self):
+		"""
+		Student.get_name: Returns the name for the current student object
+
+		@returns
+		name: Name of the student
+		"""
 		return self.__name
 
 	def get_grade(self):
+		"""
+		Student.get_grade: Returns the grade or class for the current student object
+
+		@returns
+		grade: Grade of the student
+		"""
 		return self.__grade
 
 	def get_marks(self):
+		"""
+		Student.get_marks: Returns a list of all the marks obtained by current student. Returns an empty list in case of no marks data.
+
+		@returns
+		marks: List of marks of the student
+		"""
 		return self.__marks
