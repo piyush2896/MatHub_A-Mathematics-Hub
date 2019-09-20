@@ -1,11 +1,11 @@
 def add(data):
-	print('Add Function:')
+	return data['operand1'] + data['operand2']
 
 def sub(data):
-	print('Subtract Function:')
+	return data['operand1'] - data['operand2']
 
 def mul(data):
-	print('Multiply Function:')
+	return data['operand1'] * data['operand2']
 
 def div(data):
-	print('Divide Function:')
+	return data['operand1'] / data['operand2']
