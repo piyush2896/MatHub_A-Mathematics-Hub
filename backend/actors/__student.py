@@ -3,6 +3,10 @@ import numpy as np
 from .client import BaseClient
 
 class Student(BaseClient):
+	"""
+	actors.__student.Student: This class is a derived class from the ABC - actors.client.BaseClass.
+	It represents a student interacting with the web interface.
+	"""
 	def __init__(self, name, grade):
 		self.__name = name
 		self.__grade = grade
