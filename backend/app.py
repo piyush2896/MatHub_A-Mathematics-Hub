@@ -24,11 +24,15 @@ def arithmetic_sub():
 
 @app.route('/mul')
 def arithmetic_mul():
-	return flask.render_template_string('HEllO from mul')
+    data = flask.request.json
+    arithmetic_helper(data)
+    return flask.jsonify({'result': basic_ops.mul(data)})
 
 @app.route('/div')
 def arithmetic_div():
-	return flask.render_template_string('HEllO from div')
+    data = flask.request.json
+    arithmetic_helper(data)
+    return flask.jsonify({'result': basic_ops.div(data)})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
