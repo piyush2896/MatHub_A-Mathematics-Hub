@@ -1,13 +1,16 @@
-body {
-  background-color: #88ceb2;
+@font-face {
+   font-family: myFirstFont;
+   src: url(../resources/USBI.ttf);
 }
 
-h1 {
-  color: red;
-  text-align: center;
+* {
+   font-family: myFirstFont;
 }
 
-.logo{
-  width:100px;
-  height:100px;
+.btn btn-primary
+{
+  height: 50%;
+  background-color:#213534;
+  padding-right:20%;
+  padding-left:20%;
 }
