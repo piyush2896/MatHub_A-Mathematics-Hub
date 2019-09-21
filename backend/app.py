@@ -1,14 +1,26 @@
 import flask
 
+from arithmetic_api import basic_ops
+
 app = flask.Flask(__name__)
 
-@app.route('/add')
-def arithmetic_add():
-    return flask.render_template_string('HEllO from add')
+def arithmetic_helper(data):
+    if 'operand1' not in list(data.keys()):
+        print('Throw Error') # TODO: Throw Error
+    if 'operand2' not in list(data.keys()):
+        print('Throw Error') # TODO: Throw Error
 
-@app.route('/sub')
+@app.route('/add', methods=['GET', 'POST'])
+def arithmetic_add():
+    data = flask.request.json
+    arithmetic_helper(data)
+    return flask.jsonify({'result': basic_ops.add(data)})
+
+@app.route('/sub', methods=['GET', 'POST'])
 def arithmetic_sub():
-    return flask.render_template_string('HEllO from sub')
+    data = flask.request.json
+    arithmetic_helper(data)
+    return flask.jsonify({'result': basic_ops.sub(data)})
 
 @app.route('/mul')
 def arithmetic_mul():
