@@ -1,0 +1,63 @@
+@font-face {
+   font-family: myFirstFont;
+   src: url(../resources/USBI.ttf);
+}
+
+* {
+   font-family: myFirstFont;
+}
+
+
+body
+{
+background-color:#88ceb2;
+}
+
+.d1
+{
+
+position:relative;
+top:10%;
+left:20%;
+width:200px;
+height:90px;
+text-align:center;
+border:1px solid white;
+}
+.d2
+{
+
+
+position:relative;
+top:10%;
+left:40%;
+width:200px;
+height:90px;
+text-align:center;
+border:1px solid white;
+}
+
+.d3
+{
+
+
+position:relative;
+top:15%;
+left:60%;
+width:200px;
+height:90px;
+text-align:center;
+border:1px solid white;
+}
+.temp
+{
+
+
+position:relative;
+top:15%;
+left:80%;
+width:50px;
+height:20px;
+text-align:center;
+border:1px solid white;
+}
