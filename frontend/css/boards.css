@@ -7,7 +7,12 @@
    font-family: myFirstFont;
 }
 
+.im
+{
+position:relative;
+left:-10%;
 
+}
 body
 {
 background-color:#88ceb2;
