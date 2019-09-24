@@ -1,0 +1,20 @@
+@font-face {
+   font-family: myFirstFont;
+   src: url(../resources/USBI.ttf);
+}
+
+* {
+   font-family: myFirstFont;
+}
+
+
+h1,h2
+{
+text-align:center;
+}
+
+#a,#b,#op,#res
+{
+width:150px;
+}
+
