@@ -25,10 +25,10 @@ class OperatorImplementor:
 		OperatorImplementor.__instance = self
 
 	def do_op(self, data):
-		if data['operand'] not in self.__ops_available:
+		if data['operator'] not in self.__ops_available:
 			raise NotImplementedError('Operator not implemented')
 		else:
-			return self.__ops_to_func[data['operand']](data)
+			return self.__ops_to_func[data['operator']](data)
 
 def add(data):
 	"""
