@@ -10,29 +10,12 @@ def arithmetic_helper(data):
     if 'operand2' not in list(data.keys()):
         print('Throw Error') # TODO: Throw Error
 
-@app.route('/add', methods=['GET', 'POST'])
-def arithmetic_add():
-    data = flask.request.json
-    arithmetic_helper(data)
-    return flask.jsonify({'result': basic_ops.add(data)})
-
-@app.route('/sub', methods=['GET', 'POST'])
-def arithmetic_sub():
-    data = flask.request.json
-    arithmetic_helper(data)
-    return flask.jsonify({'result': basic_ops.sub(data)})
-
-@app.route('/mul')
-def arithmetic_mul():
-    data = flask.request.json
-    arithmetic_helper(data)
-    return flask.jsonify({'result': basic_ops.mul(data)})
-
-@app.route('/div')
-def arithmetic_div():
-    data = flask.request.json
-    arithmetic_helper(data)
-    return flask.jsonify({'result': basic_ops.div(data)})
+@app.route('/eval', methods=['GET', 'POST'])
+def basic_arithmetic_ops():
+	data = flask.request.json 
+	implementor = basic_ops.OperatorImplementor.create()
+	result = implementor.do_op(data)
+	return flask.jsonify({'result': result})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
