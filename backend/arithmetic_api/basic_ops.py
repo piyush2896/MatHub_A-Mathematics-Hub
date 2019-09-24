@@ -1,4 +1,8 @@
 class OperatorImplementor:
+	"""
+	TODO: Give proper reference in documentation phase
+	Src: https://www.tutorialspoint.com/python_design_patterns/python_design_patterns_singleton.htm
+	"""
 	__instance = None
 
 	@staticmethod
