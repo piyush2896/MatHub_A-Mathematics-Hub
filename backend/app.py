@@ -14,16 +14,16 @@ def arithmetic_helper(data):
 
 @app.route('/eval', methods=['GET', 'POST'])
 def basic_arithmetic_ops():
-	data = flask.request.json
+    data = flask.request.json
     try:
         arithmetic_helper(data)
     except KeyError as e:
-        return flask.jsonify({'result': str(e)})
-    except Exception as e:
+        return flask.jsonify({'result': '{}'.format(e)})
+    except:
         return flask.jsonify({'result': 'Error'}) 
-	implementor = basic_ops.OperatorImplementor.create()
-	result = implementor.do_op(data)
-	return flask.jsonify({'result': result})
+    implementor = basic_ops.OperatorImplementor.create()
+    result = implementor.do_op(data)
+    return flask.jsonify({'result': result})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

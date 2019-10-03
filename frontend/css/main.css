@@ -19,6 +19,7 @@ padding-top:30%;
   padding-right:17%;
   padding-left:17%;
   font-size: 140%;
+  color: white;
 }
 
 p
@@ -29,7 +30,8 @@ p
 
 #d1
 {
-  background-image:url('../resources/bg.jpg'); height:100%;
+  background-image:url('../resources/bg.jpg');
+  height:100%;
 }
 
 #d2
