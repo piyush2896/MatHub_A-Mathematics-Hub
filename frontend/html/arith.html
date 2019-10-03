@@ -2,36 +2,48 @@
 <head>
 <title> Arithmetic operations </title>
 <link rel="stylesheet" href="../css/arith.css">
-<link rel="stylesheet" href="../resources/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="../resources/bootstrap.min.css"> -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
 </head>
 
 <body style="background-color:#88ceb2">
 
-
 <div class='container'>
-<h1>Mathub </h1>
-<h2> Arithmetic Operations </h2>
+  <div class='row'>
+<h1>Mathub </h1></div>
+  <div class='row'>
+<h2> Arithmetic Operations </h2></div>
 </br></br></br>
-<form class="form-inline" id="f" style="text-align:center">
-<div class="form-group">
-  <input type="text" class="form-control" placeholder="Operator 1"id="a">
 
-   <input type="password" class="form-control" placeholder="Operand" id="op">
+ <div id='results'>
 
-  <input type="password" class="form-control" placeholder="Operator 2"id="b">
+ </div>
+  <form class="form-inline" id="f" style="text-align:center">
+        <div class="form-group">
+          <input type="number" class="form-control" placeholder="Operand 1" id="a" name='input1'>
 
-  <button type="button" class="btn btn-success btn-sm">
-          <span class="glyphicon glyphicon-play"></span> 
-        </button>
+          <input type="text" class="form-control" placeholder="Operator" id="op" name='input2'>
 
-  <textarea class="form-control" rows="1" placeholder="Result" id="res"></textarea>
+          <input type="number" class="form-control" placeholder="Operand 2" id="b" name='input3'>
+
+          <button onclick="call_function()" type="button" class="btn btn-success btn-sm"  id='button1' >
+              <span class="glyphicon glyphicon-play"></span>
+          </button>
+
+          <!-- <input class="btn btn-primary" type="submit" value="Submit"> -->
+
+          <textarea disabled class="form-control" rows="1" placeholder="Result" id="result_display"></textarea>
+
+        </div>
+  </form>
+
 </div>
-</form>
-
-</div>
+<script src="../js/arith.js"></script>
 
 </body>
 </html>
