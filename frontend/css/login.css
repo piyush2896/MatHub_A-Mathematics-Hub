@@ -1,9 +1,11 @@
-@font-face {
+@font-face 
+{
    font-family: myFirstFont;
    src: url(../resources/USBI.ttf);
 }
 
-* {
+* 
+{
    font-family: myFirstFont;
 }
 
