@@ -3,7 +3,16 @@ function call_function()
     op1 = document.getElementById("a");
     opr = document.getElementById("op");
     op2 = document.getElementById("b");
-    var data = JSON.stringify({"operand1": op1.valueAsNumber, "operand2": op2.valueAsNumber, "operator": opr.value});
+    var data = {"operand1": op1.valueAsNumber, "operand2": op2.valueAsNumber, "operator": opr.value}
+
+
+    if(opr.value === "x"||opr.value==="X")
+    {
+      data.operator='*';
+    }
+    data = JSON.stringify(data);
+
+    console.log(data);
 
     var xhr = new XMLHttpRequest();
     var url = "http://localhost:5000/eval";
@@ -25,15 +34,10 @@ function call_function()
         }
     };
 
-    if(opr=='x'||opr=='X')
-    {
-      opr='*';
-    }
-
     xhr.send(data);
 }
 
-function add_row(result)
+function add_row(result){
     div = $('#results');
     old_html = div.html();
 
