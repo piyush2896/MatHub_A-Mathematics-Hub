@@ -1,0 +1,36 @@
+{% extends "layout.html"%}
+
+{% block title %}
+<title>MatHub</title>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css')}}">
+{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-xs-6" id="separator-block">
+    </div>
+
+    <div class="col-xs-6" id="login-block">
+        <div class="row">
+        <img class="img-responsive col-xs-6 col-xs-offset-3" src="{{ url_for('static', filename='img/logo.png')}}" alt="MatHub" style="margin-top: 10%">
+        </div>
+        <div class="row">
+        <h1 class="mathub-h1 col-xs-8 col-xs-offset-2 text-center">Join MatHub today!</h1>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+            <button type="button" class="btn btn-success btn-login-signup">Log in</button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+            <button type="button" class="btn btn-success btn-login-signup">Sign up</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
