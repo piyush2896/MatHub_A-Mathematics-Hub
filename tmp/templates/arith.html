@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<title>Arithmetic operations</title>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/arith.css')}}">
+{% endblock %}
+
+{% block body %}
+<div class='row'>
+    <h1>Mathub </h1>
+</div>
+<div class='row'>
+    <h2> Arithmetic Operations </h2>
+</div>
+
+</br></br></br>
+
+<div id='results'></div>
+
+
+<form class="form-inline text-center" id="f" >
+    <div class="form-group">
+        <input type="number" class="form-control col-xs-offset-2 col-xs-2 form-item" placeholder="Operand 1" id="a" name='input1'>
+
+        <input type="text" class="form-control col-xs-1 form-item" placeholder="Operator" id="op" name='input2'>
+
+        <input type="number" class="form-control col-xs-2 form-item" placeholder="Operand 2" id="b" name='input3'>
+
+        <button onclick="call_function()" type="button" class="btn btn-success btn-sm col-xs-1 form-item"  id='button1' >
+            <span class="glyphicon glyphicon-play"></span>
+        </button>
+
+        <input disabled class="form-control col-xs-2" rows="1" placeholder="Result" id="result_display"></input>
+
+    </div>
+</form>
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/arith.js')}}"></script>
+{% endblock %}
