@@ -10,8 +10,8 @@ function call_function()
 
 
     var xhr = new XMLHttpRequest();
-    //var url = "http://localhost:5000/eval/";
-    var url = "http://192.168.43.212:5000/eval"
+    var url = "http://localhost:5000/eval/";
+    //var url = "http://192.168.43.212:5000/eval"
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
 
