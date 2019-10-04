@@ -5,13 +5,8 @@ function call_function()
     op2 = document.getElementById("b");
     var data = JSON.stringify({"operand1": op1.valueAsNumber, "operand2": op2.valueAsNumber, "operator": opr.value});
 
-
-      console.log(data);
-
-
     var xhr = new XMLHttpRequest();
-    var url = "http://localhost:5000/eval/";
-    //var url = "http://192.168.43.212:5000/eval"
+    var url = "http://localhost:5000/eval";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
 
@@ -27,7 +22,6 @@ function call_function()
 
             add_row(json.result);
             reset();
-            //console.log(json.email + ", " + json.password);
         }
     };
 
@@ -39,8 +33,7 @@ function call_function()
     xhr.send(data);
 }
 
-function add_row(result){
-    // console.log(data)
+function add_row(result)
     div = $('#results');
     old_html = div.html();
 
@@ -59,6 +52,3 @@ function reset(){
   $('#op').val('');
   $('#result_display').val('');
 }
-
-// var answer = JSON.parse(json);
-// document.getElementById("result_display").innerHTML= answer;
