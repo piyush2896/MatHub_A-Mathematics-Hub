@@ -1,0 +1,34 @@
+{% extends "layout.html"%}
+
+{% block title %}
+<title>MatHub</title>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/boards.css')}}">
+{% endblock %}
+
+{% block body %}
+
+<div class="row dynamic-margin">
+    <div class="col-xs-2 col-xs-offset-5"> 
+        <img class="img-responsive" src="{{ url_for('static', filename='img/logo.png') }}" alt="MatHub">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-2 col-xs-offset-5">
+        <img class="img-responsive" src="{{ url_for('static', filename='img/text.png') }}" alt="MatHub">
+    </div>
+</div>
+
+<div class="row">
+    <button class=" btn btn-default btn-board col-xs-offset-4 col-xs-4">Game Board</button>
+</div>
+<div class="row">
+    <button class=" btn btn-default btn-board col-xs-offset-4 col-xs-4">Practice Board</button>
+</div>
+<div class="row">
+    <button class=" btn btn-default btn-board col-xs-offset-4 col-xs-4">Game Assignments</button>
+</div>
+{% endblock %}
