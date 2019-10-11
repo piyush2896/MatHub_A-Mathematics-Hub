@@ -7,6 +7,9 @@ class Student(BaseClient):
 	actors.__student.Student: This class is a derived class from the ABC - actors.client.BaseClass.
 	It represents a student interacting with the web interface.
 	"""
+
+	DB_URL = "https://mathub-ser515.firebaseio.com/Students"
+
 	def __init__(self, name, grade):
 		"""
 		actors.__student.Student: This class is a derived class from the ABC - actors.client.BaseClass.
