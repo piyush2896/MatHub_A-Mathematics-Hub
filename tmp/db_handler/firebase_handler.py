@@ -21,3 +21,8 @@ def add_data(firebase_url, data, log_file=None):
 def retrieve_data(firebase_url, username):
     result = requests.get(firebase_url + '/{}.json'.format(username.split('.')[0]))
     return result.json()
+
+def retrieve_password_from_fb_data(data):
+    data_to_list_of_tuples = list(data.items())
+    data_dict = data_to_list_of_tuples[0][1]
+    return data_dict['password']

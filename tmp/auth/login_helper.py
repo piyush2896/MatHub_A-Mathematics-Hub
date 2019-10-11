@@ -4,8 +4,8 @@ from db_handler import firebase_handler as fb_handle
 
 def verify(db_url, username, password):
     if is_username(db_url, username):
-        user_data = list(fb_handle.retrieve_data(db_url, username).items())
-        password_candidate = user_data[0][1]['password']
+        user_data = fb_handle.retrieve_data(db_url, username)
+        password_candidate = fb_handle.retrieve_password_from_fb_data(user_data)
         if is_password_correct(password_candidate, password):
             return (True, None)
         else:
