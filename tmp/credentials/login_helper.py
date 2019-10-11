@@ -3,9 +3,14 @@ from passlib.hash import sha256_crypt
 from db_handler import firebase_handler as fb_handle
 
 def verify(db_url, username, password):
-    # TODO: Find Username in DB
-    # TODO: Check if Password Matches
-    return True 
+    if is_username(db_url, username):
+        user_data = list(fb_handle.retrieve_data(db_url, username).items())
+        password_candidate = user_data[0][1]['password']
+        if is_password_correct(password_candidate, password):
+            return (True, None)
+        else:
+            return (False, 'Password Incorrect')
+    return (False, 'Username Incorrect')
 
 def is_username(db_url, username):
     data = fb_handle.retrieve_data(db_url, username)
