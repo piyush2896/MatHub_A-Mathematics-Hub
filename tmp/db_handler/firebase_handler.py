@@ -17,3 +17,7 @@ def add_data(firebase_url, data, log_file=None):
                 f.write(time.strftime('%m-%d-%Y') + '|' +
                         time.strftime('%H:%M:%S') +
                         'Exception:' + str(e) + '\n')
+
+def retrieve_data(firebase_url, username):
+    result = requests.get(firebase_url + '/{}.json'.format(username.split('.')[0]))
+    return result.json()
