@@ -10,19 +10,18 @@ class Student(BaseClient):
 
 	DB_URL = "https://mathub-ser515.firebaseio.com/Students"
 
-	def __init__(self, name, grade):
+	def __init__(self, username, id, name, grade):
 		"""
 		actors.__student.Student: This class is a derived class from the ABC - actors.client.BaseClass.
 		It represents a student interacting with the web interface.
 
 		@params
+		username: Username of the Student.
+		id: Id of the student.
 		name: Name of the Student
 		grade: Grade/class in which the Student belong.
-
-		@returns
-		Student: Returns an instance of object of class Student
 		"""
-		self.__name = name
+		super().__init__(username, id, name)
 		self.__grade = grade
 		self.__marks = []
 
@@ -33,7 +32,7 @@ class Student(BaseClient):
 		@params
 		name: Name of the Student
 		"""
-		self.__name = name
+		super().set_name(name)
 
 	def set_grade(self, grade):
 		"""
@@ -61,7 +60,25 @@ class Student(BaseClient):
 		@returns
 		name: Name of the student
 		"""
-		return self.__name
+		return super().get_name()
+
+	def get_username(self):
+		"""
+		Student.get_username: Returns the username for the current student object
+
+		@returns
+		username: Username of the student
+		"""
+		return super().get_username()
+
+	def get_id(self):
+		"""
+		Student.get_id: Returns the id for the current student object
+
+		@returns
+		id: ID of the student
+		"""
+		return super().get_id()
 
 	def get_grade(self):
 		"""
