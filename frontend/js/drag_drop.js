@@ -98,15 +98,44 @@ $ ( document ). ready(function() {
         value_sum = value_sum + card_slot
         $("#total_sum").text(value_sum)
       } */
-
-      for(i=0; i<number_array_members; i++)
-        {
-          // console.log(number_array_members)
-          if(cardspace.array_member[i] != "+" && cardspace.array_member[i] != "-" && cardspace.array_member[i] != "x" && cardspace.array_member[i] != "/")
-            console.log(cardspace.array_member[i])
-        }
-
-
+	  
+	  counter=0;
+	  var j=0;
+	  var k=0;
+	  var term1 = [];
+	  var term2 = [];
+	  var opr;
+		
+		for(i=0; i<number_array_members; i++)
+		{
+			counter=counter+1;
+			if(cardspace.array_member[i] != "+" && cardspace.array_member[i] != "-" && cardspace.array_member[i] != "x" && cardspace.array_member[i] != "/")
+			{
+				term1[j]=cardspace.array_member[i];
+				j=j+1;
+			}
+			else
+			{
+				opr=cardspace.array_member[i];
+				break;
+			}
+			
+		}
+		
+		
+		for(i=counter;i<number_array_members;i++)
+		{
+			if(cardspace.array_member[i]!= "=")
+			{
+				term2[k]=cardspace.array_member[i];
+				k=k+1;
+			}
+		}
+		
+		console.log('Opr', opr);
+		console.log('T1', term1);
+		console.log('T2', term2);
+		
       // op1=
       // op2=
       // opr=
