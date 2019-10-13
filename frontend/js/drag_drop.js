@@ -71,17 +71,26 @@ $ ( document ). ready(function() {
 
       var value_num = $(ui.draggable).text();
       card_slot = cardspace.array[value_num]
-      console.log(card_slot)
-      cardspace.array_member.push(value_num)
+	  cardspace.array_member.push(value_num)
+	  
+	  var value_op = $(ui.draggable).text();
+	  console.log(value_op);
+	  //card_slot = opcardspace.array[value_op]
+	  card_slot=value_op;
+	  console.log(card_slot);
+	  opcardspace.array_member.push(value_op)
+	  $("#cardSlots").append("<div class='operator'>" + card_slot + "</div>")
+	  
+	  console.log(card_slot)
       var number_array_members = cardspace.array_member.length
       console.log(number_array_members)
-      if ( number_array_members <= 10 ) {
+     /* if ( number_array_members <= 10 ) {
         $("#cardSlots").append("<div class='number'>" + card_slot + "</div>")
-        // console.log(cardspace)
+        
+		/* To add and display in result column
         value_sum = value_sum + card_slot
-        // console.log(value_sum)
-        $("#total_sum").text(value_sum)
-      }
+        $("#total_sum").text(value_sum) 
+      } */
     }
   });
 });
