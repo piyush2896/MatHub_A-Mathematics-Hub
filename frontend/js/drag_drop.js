@@ -22,6 +22,8 @@ $ ( document ). ready(function() {
       console.log("multi");
     else if(operator==='/')
       console.log("divide");
+    else if(operator==='=')
+      console.log("equals");
   }
 
   var OpCardSpace = function(){
@@ -41,7 +43,7 @@ $ ( document ). ready(function() {
 
   cardspace.array = [0,1,2,3,4,5,6,7,8,9]
 
-  opcardspace.array = ['+','-','x','/']
+  opcardspace.array = ['+','-','x','/','=']
   // cardspace.array = [0,1,2,3,4,5,6,7,8,9,'+','-','*','/']
 
   for(i=0; i<10; i++){
@@ -49,10 +51,10 @@ $ ( document ). ready(function() {
     $("#cardPile").append(card.element)
   }
 
-  for(i=0; i<4; i++){
+  for(i=0; i<5; i++){
     card = new OpCard(opcardspace.array[i])
     $("#cardPile").append(card.element)
-    console.log("inside");
+    // console.log("inside");
   }
 
   console.log(cardspace.array);
@@ -69,28 +71,41 @@ $ ( document ). ready(function() {
   $( "#cardSlots" ).droppable({
     drop: function( event, ui ) {
 
-      var value_num = $(ui.draggable).text();
-      card_slot = cardspace.array[value_num]
+    var tokens=[];
+
+
+
+    var value_num = $(ui.draggable).text();
+    card_slot = cardspace.array[value_num]
 	  cardspace.array_member.push(value_num)
-	  
+
 	  var value_op = $(ui.draggable).text();
-	  console.log(value_op);
+	  // console.log(value_op);
 	  //card_slot = opcardspace.array[value_op]
 	  card_slot=value_op;
-	  console.log(card_slot);
+	  // console.log(card_slot);
 	  opcardspace.array_member.push(value_op)
 	  $("#cardSlots").append("<div class='operator'>" + card_slot + "</div>")
-	  
-	  console.log(card_slot)
+
+	  // console.log(card_slot)
       var number_array_members = cardspace.array_member.length
-      console.log(number_array_members)
+      // console.log(number_array_members)
+      console.log(cardspace.array_member)
      /* if ( number_array_members <= 10 ) {
         $("#cardSlots").append("<div class='number'>" + card_slot + "</div>")
-        
+
 		/* To add and display in result column
         value_sum = value_sum + card_slot
-        $("#total_sum").text(value_sum) 
+        $("#total_sum").text(value_sum)
       } */
+
+
+
+      // op1=
+      // op2=
+      // opr=
+
+
     }
   });
 });
