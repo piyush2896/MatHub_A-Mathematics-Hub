@@ -99,6 +99,12 @@ $ ( document ). ready(function() {
         $("#total_sum").text(value_sum)
       } */
 
+      for(i=0; i<number_array_members; i++)
+        {
+          // console.log(number_array_members)
+          if(cardspace.array_member[i] != "+" && cardspace.array_member[i] != "-" && cardspace.array_member[i] != "x" && cardspace.array_member[i] != "/")
+            console.log(cardspace.array_member[i])
+        }
 
 
       // op1=
