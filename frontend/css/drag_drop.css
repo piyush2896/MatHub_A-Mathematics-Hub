@@ -34,12 +34,12 @@ p
 
 #d3_result
 {
-  background-color:grey;
+  background-color:#a3ffda;
   height:100%;
 }
 #cardPile {
   margin: 0 auto;
-  background: #0080ff;
+  background: #252525;
 }
 
 #cardPile
@@ -65,7 +65,7 @@ p
 
 
 #cardPile div {
-  background: #806600;
+  background: #00714c;
   color: #fff;
   font-size: 50px;
   text-shadow: 0 0 3px #000;
@@ -91,19 +91,29 @@ p
 
 
 /* Add some margin to the page and set a default font and colour */
+@font-face
+{
+   font-family: myFirstFont;
+   src: url(../resources/USBI.ttf);
+}
+
+*
+{
+   font-family: myFirstFont;
+}
 
 body {
   margin: 30px;
-  font-family: "Georgia", serif;
+  /* font-family: "Georgia", serif; */
   line-height: 1.8em;
   color: #333;
 }
 
 /* Give headings their own font */
 
-h1, h2, h3, h4 {
+/* h1, h2, h3, h4 {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
+} */
 
 /* Main content area */
 
@@ -128,7 +138,7 @@ h1, h2, h3, h4 {
 
 #cardSlots {
   margin: 50px auto 0 auto;
-  background: #1ab2ff;
+  background: #88ceb2;
 }
 
 #total_sum {
@@ -154,7 +164,7 @@ h1, h2, h3, h4 {
   padding-top: 20;
   border: 2px solid #333;
   font-size: 50px;
-  background-color: #e8c264;
+  background-color: #a3ffda;
 }
 
 
@@ -185,41 +195,8 @@ h1, h2, h3, h4 {
 
 
 #cardSlots div {
-  background: #b38f00;
+  background: #00714c;
   color: #fff;
   font-size: 50px;
   text-shadow: 0 0 3px #000;
 }
-
-/*#list_num {
-
-  list-style: none;
-  margin-left: -10px;
-  margin-top: -10px;
-
-
-}
-
-#list_num  li {
-
-position: relative;
-
-  float: left;
-  font-size: 4.5em;
-  height: 100px;
-  width: 50px; 
-  padding: 17px;
-  padding-top: 47px;
-  padding-bottom: 50px;
-  margin: 5px;
-  border: 1px solid;
-  border-radius: 10px;
-  background-color: #4db8ff;
-  
-
-}
-
-
-*/
-
-
