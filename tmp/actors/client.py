@@ -38,7 +38,7 @@ class BaseClient(ABC):
 		return self.__name
 
 	def set_name(self, name):
-		return self.__name = name
+		self.__name = name
 
 	def get_password(self):
 		data = fb_handle.retrieve_data(self.__username)
