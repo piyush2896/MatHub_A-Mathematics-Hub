@@ -1,3 +1,35 @@
+class OperatorImplementor:
+	"""
+	TODO: Give proper reference in documentation phase
+	Src: https://www.tutorialspoint.com/python_design_patterns/python_design_patterns_singleton.htm
+	"""
+	__instance = None
+
+	@staticmethod
+	def create():
+		if OperatorImplementor.__instance == None:
+			OperatorImplementor()
+		return OperatorImplementor.__instance
+
+	def __init__(self):
+		if OperatorImplementor.__instance != None:
+			raise Exception('Cannot re-instantiate a singleton class.')
+		
+		self.__ops_to_func = {
+			'+': add,
+			'-': sub,
+			'*': mul,
+			'/': div
+		}
+		self.__ops_available = set(self.__ops_to_func.keys())
+		OperatorImplementor.__instance = self
+
+	def do_op(self, data):
+		if data['operator'] not in self.__ops_available:
+			raise NotImplementedError('Operator not implemented')
+		else:
+			return self.__ops_to_func[data['operator']](data)
+
 def add(data):
 	"""
 	arithmetic_api.add: Adds two operands
