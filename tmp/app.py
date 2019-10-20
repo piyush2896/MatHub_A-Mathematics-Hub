@@ -1,3 +1,4 @@
+import flask
 from passlib.hash import sha256_crypt
 
 from db_handler import firebase_handler as fb_handle
@@ -56,5 +57,31 @@ def login():
 
     return flask.render_template('login.html')
 
+@app.route('/admin-login', methods=['GET', 'POST'])
+def admin_login():
+    if flask.request.method == 'POST':
+        username = flask.request.form['email']
+        password_candidate = flask.request.form['pwd']
+
+        password = __login_helper('admin', username, password_candidate)
+        if password != None:
+            if sha256_crypt.verify(password_candidate, password):
+                flask.session['logged_in'] = True
+                flask.session['username'] = username
+                flask.session['usertype'] = 'admin'
+                return flask.redirect(flask.url_for('boards')) # TODO: Discuss
+            else:
+                flask.flash('Incorrect login!', 'danger')
+
+    return flask.render_template('login.html', login_type='admin')
+
+@app.route('/create-user', methods=['GET', 'POST'])
+def create_user():
+    if flask.session['logged_in'] and flask.session['usertype'] == 'admin':
+        return flask.render_template('create_user.html')
+    else:
+        return flask.redirect(flask.url_for('login'))
+
 if __name__ == '__main__':
+    app.secret_key = "mathub-ser515"
     app.run(host='0.0.0.0', port=3000, debug=True)
