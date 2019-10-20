@@ -22,13 +22,13 @@
         </div>
         <div class="row">
             <div class="col-xs-6 col-xs-offset-3">
-            <button type="button" class="btn btn-success btn-login-signup">Log in</button>
+            <a href="{{ url_for('login') }}" class="btn btn-success btn-login-signup">LogIn</a>
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-xs-6 col-xs-offset-3">
-            <button type="button" class="btn btn-success btn-login-signup">Sign up</button>
+            <a href="{{ url_for('admin_login') }}" class="btn btn-success btn-login-signup">Admin LogIn</a>
             </div>
         </div>
     </div>
