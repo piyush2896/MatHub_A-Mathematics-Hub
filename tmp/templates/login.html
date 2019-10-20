@@ -1,0 +1,48 @@
+{% extends "layout.html"%}
+
+{% block title %}
+<title>MatHub - Login</title>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css')}}">
+{% endblock %}
+
+{% block body %}
+<div class="row" style="margin-top: 2%">
+    <img class="col-xs-2 col-xs-offset-5 img-responsive text-center" src="{{ url_for('static', filename='img/logo.png')}}" alt="MatHub" >
+</div>
+
+<div class="row">
+    {% if login_type != 'admin' %}
+    <h2 class="col-xs-6 col-xs-offset-3 text-center log-head"> LogIn to Mathub</h2>
+    {% else %}
+    <h2 class="col-xs-6 col-xs-offset-3 text-center log-head"> Admin LogIn</h2>
+    {% endif %}
+</div>
+
+<!-- Add form here for login -->
+
+{% if login_type != 'admin' %}
+<div class="signup">
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-1">
+            <h5>Are you an admin? </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-1">
+            <a href='/admin-login' type="button" id="singup-btn" class="btn btn-primary">Admin LogIn</a>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block js %}
+<script>
+    setTimeout(function() {
+        $('.alert').fadeOut('fast');
+    }, 5000);
+</script>
+{% endblock %}
