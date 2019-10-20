@@ -21,7 +21,45 @@
     {% endif %}
 </div>
 
-<!-- Add form here for login -->
+<div class="row">
+    <div class="col-xs-10 col-xs-offset-1" id="form">
+        {% if login_type != 'admin' %}
+        <form method="POST" action="/login">
+        {% else %}
+        <form method="POST" action="/admin-login">
+        {% endif %}
+        {% include 'includes/_messages.html' %}
+            {% if login_type != 'admin' %}
+            <div class="form-group col-xs-6 col-xs-offset-3 text-center radios">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionRadios" id="student-radio" value="student" checked> Student
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionRadios" id="teacher-radio" value="teacher"> Teacher
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionRadios" id="parent-radio" value="parent"> Parent
+                    </label>
+                </div>
+            </div>
+            {% endif %}
+            <div class="form-group col-xs-10 col-xs-offset-1 email">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email"  name="email">
+            </div>
+            <div class="form-group col-xs-10 col-xs-offset-1 password">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd"  name="pwd">
+            </div>
+            <button type="submit" id="login-btn" class="btn btn-primary col-xs-4 col-xs-offset-4">LogIn</button>
+        </form>
+    </div>
+</div>
 
 {% if login_type != 'admin' %}
 <div class="signup">
