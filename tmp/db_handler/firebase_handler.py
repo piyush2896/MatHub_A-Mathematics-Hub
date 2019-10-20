@@ -36,6 +36,14 @@ class FirebaseEntryPoint:
         return (FirebaseEntryPoint.FIREBASE_URL + firebase_url + 
                 '/{}.json'.format(username.split('.')[0]))
 
+    def update_data(self, firebase_url, data, log_file=None):
+        try:
+            result = requests.put(self.__make_url(
+                firebase_url, data['username']), data=json.dumps(data))
+            self.__log('Data Updated: ' + json.dumps(data))
+        except Exception as e:
+            self.__log('Exception: '+ str(e), log_file)
+
     def retrieve_data(self, firebase_url, username):
         result = requests.get(self.__make_url(firebase_url, username))
         return result.json()
