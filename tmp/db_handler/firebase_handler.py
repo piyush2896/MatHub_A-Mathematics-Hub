@@ -18,20 +18,19 @@ class FirebaseEntryPoint:
             FirebaseEntryPoint()
         return FirebaseEntryPoint.__instance
 
+    def __log(self, msg, log_file=None):
+        if log_file == None:
+            return
+        with open(log_file, 'a+') as f:
+            f.write(time.strftime('%m-%d-%Y') + '|' +
+                    time.strftime('%H:%M:%S') + '\t' + msg +'\n')
+
     def add_data(self, firebase_url, data, log_file=None):
         try:
             result = requests.post(self.__make_url(firebase_url, data['username']), data=json.dumps(data))
-            if log_file != None:
-                with open(log_file, 'a') as f:
-                    f.write(time.strftime('%m-%d-%Y') + '|' +
-                            time.strftime('%H:%M:%S') +
-                            'Data Created: ' + json.dumps(data)+'\n')
+            self.__log('Data Created: ' + json.dumps(data), log_file)
         except Exception as e:
-            if log_file != None:
-                with open(log_file, 'a') as f:
-                    f.write(time.strftime('%m-%d-%Y') + '|' +
-                            time.strftime('%H:%M:%S') +
-                            'Exception:' + str(e) + '\n')
+            self.__log('Exception: ' + str(e), log_file)
 
     def __make_url(self, firebase_url, username):
         return (FirebaseEntryPoint.FIREBASE_URL + firebase_url + 
