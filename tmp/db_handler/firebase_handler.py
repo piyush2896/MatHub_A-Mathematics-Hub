@@ -63,3 +63,21 @@ class FirebaseEntryPoint:
             self.__log('Exception: ' + str(e), log_file)
             return None
         return id_dict['id']
+
+    def update_id(self, firebase_url):
+        try:
+            result = requests.get(
+                FirebaseEntryPoint.FIREBASE_URL + firebase_url + '/id.json')
+            fb_id, id_dict = list(result.json().items())[0]
+            self.__log('Data Retrieved: ' + json.dumps(id_dict), log_file)
+        except AttributeError as e:
+            self.__log('Exception: ' + str(e), log_file)
+            raise IdNotFoundError('Id not found at: {}{}'.format(
+                FirebaseEntryPoint.FIREBASE_URL, firebase_url))
+        
+        last_id = id_dict['id']
+        result = requests.put(
+            FirebaseEntryPoint.FIREBASE_URL + firebase_url + '/id.json',
+            data=json.dumps({fb_id: {'id': last_id+1}}))
+
+        return last_id+1
