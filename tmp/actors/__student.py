@@ -1,5 +1,3 @@
-import numpy as np
-
 from .client import BaseClient
 
 class Student(BaseClient):
