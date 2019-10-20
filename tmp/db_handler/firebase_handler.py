@@ -52,3 +52,14 @@ class FirebaseEntryPoint:
         data_to_list_of_tuples = list(data.items())
         data_dict = data_to_list_of_tuples[0][1]
         return data_dict['password']
+
+    def retrieve_last_id(self, firebase_url):
+        try:
+            result = requests.get(
+                FirebaseEntryPoint.FIREBASE_URL + firebase_url + '/id.json')
+            id_dict = list(result.json().items())[0][1]
+            self.__log('Data Retrieved: ' + json.dumps(id_dict), log_file)
+        except AttributeError as e:
+            self.__log('Exception: ' + str(e), log_file)
+            return None
+        return id_dict['id']
