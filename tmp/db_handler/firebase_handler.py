@@ -20,7 +20,7 @@ class FirebaseEntryPoint:
 
     def add_data(self, firebase_url, data, log_file=None):
         try:
-            result = requests.post(self.__make_url(firebase_url, data), data=json.dumps(data))
+            result = requests.post(self.__make_url(firebase_url, data['username']), data=json.dumps(data))
             if log_file != None:
                 with open(log_file, 'a') as f:
                     f.write(time.strftime('%m-%d-%Y') + '|' +
@@ -33,13 +33,12 @@ class FirebaseEntryPoint:
                             time.strftime('%H:%M:%S') +
                             'Exception:' + str(e) + '\n')
 
-    def __make_url(self, firebase_url, data):
+    def __make_url(self, firebase_url, username):
         return (FirebaseEntryPoint.FIREBASE_URL + firebase_url + 
-                '/{}.json'.format(data['username'].split('.')[0]))
+                '/{}.json'.format(username.split('.')[0]))
 
     def retrieve_data(self, firebase_url, username):
-        result = requests.get(FirebaseEntryPoint.FIREBASE_URL + firebase_url +
-                              '/{}.json'.format(username.split('.')[0]))
+        result = requests.get(self.__make_url(firebase_url, username))
         return result.json()
 
     def retrieve_password_from_fb_data(self, data):
