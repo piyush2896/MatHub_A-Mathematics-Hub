@@ -45,3 +45,14 @@ class BaseClient(ABC):
         if data == None:
             raise ClientNotFoundError('Client {} not found!'.format(self.__username))
         return fb_handle.retrieve_password_from_fb_data(data)
+
+    def __convert_to_dict(self):
+        return {
+            key.split('_')[-1]: value
+            for key, value in self.__dict__.items()
+        }
+
+    def convert_to_dict(self):
+        data = self.__convert_to_dict()
+        data['id'] = int(data['id'][1:])
+        return data
