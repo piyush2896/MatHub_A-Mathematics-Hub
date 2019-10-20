@@ -8,7 +8,7 @@ class Student(BaseClient):
 	It represents a student interacting with the web interface.
 	"""
 
-	DB_URL = "https://mathub-ser515.firebaseio.com/Students"
+	DB_URL = "/Students"
 
 	def __init__(self, username, id, name, grade):
 		"""
