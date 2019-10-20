@@ -6,3 +6,5 @@ Every actor must inherit from the Abstract Base Class -> actors.client.BaseClien
 
 from .__student import Student
 from .__teacher import Teacher
+from .__parent import Parent
+from .__admin import Admin
