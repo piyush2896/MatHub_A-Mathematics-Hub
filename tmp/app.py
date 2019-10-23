@@ -2,6 +2,7 @@ import flask
 from passlib.hash import sha256_crypt
 
 from db_handler import firebase_handler as fb_handle
+from auth import login_helper
 import actors
 
 app = flask.Flask(__name__)
@@ -30,12 +31,7 @@ def __login_helper(usertype, username, password_candidate):
     else:
         fb_url = actors.Admin.DB_URL
 
-    data = fb_handler.retrieve_data(fb_url, username)
-    if data == None:
-        flask.flash('User Not found!', 'danger')
-        return None
-    password = fb_handler.retrieve_password_from_fb_data(data)
-    return password
+    return login_helper.verify(fb_url, username, password_candidate)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -45,15 +41,15 @@ def login():
         username = flask.request.form['email']
         password_candidate = flask.request.form['pwd']
 
-        password = __login_helper(usertype, username, password_candidate)
-        if password != None:
-            if sha256_crypt.verify(password_candidate, password):
-                flask.session['logged_in'] = True
-                flask.session['username'] = username
-                flask.session['usertype'] = usertype
-                return flask.redirect(flask.url_for('boards')) # TODO: Discuss
-            else:
-                flask.flash('Incorrect login!', 'danger')
+        is_verified, error_if_any = __login_helper(
+            usertype, username, password_candidate)
+        if is_verified:
+            flask.session['logged_in'] = True
+            flask.session['username'] = username
+            flask.session['usertype'] = usertype
+            return flask.redirect(flask.url_for('boards')) # TODO: Discuss
+        else:
+            flask.flash(error_if_any, 'danger')
 
     return flask.render_template('login.html')
 
@@ -63,15 +59,15 @@ def admin_login():
         username = flask.request.form['email']
         password_candidate = flask.request.form['pwd']
 
-        password = __login_helper('admin', username, password_candidate)
-        if password != None:
-            if sha256_crypt.verify(password_candidate, password):
-                flask.session['logged_in'] = True
-                flask.session['username'] = username
-                flask.session['usertype'] = 'admin'
-                return flask.redirect(flask.url_for('boards')) # TODO: Discuss
-            else:
-                flask.flash('Incorrect login!', 'danger')
+        is_verified, error_if_any = __login_helper(
+            'admin', username, password_candidate)
+        if is_verified:
+            flask.session['logged_in'] = True
+            flask.session['username'] = username
+            flask.session['usertype'] = 'admin'
+            return flask.redirect(flask.url_for('boards')) # TODO: Discuss
+        else:
+            flask.flash(error_if_any, 'danger')
 
     return flask.render_template('login.html', login_type='admin')
 
