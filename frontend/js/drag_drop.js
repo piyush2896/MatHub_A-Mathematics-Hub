@@ -121,7 +121,42 @@ $ ( document ). ready(function() {
     op2 = term2.join("")
     console.log('op2', op2);
 
+    if(op1 != undefined && op2 != undefined && opr != undefined)
+    call_function(op1,op2,opr)
 
     }
   });
 });
+
+
+function call_function(op1,op2,opr)
+{
+  // console.log('op1', op1);
+  var data = JSON.stringify({"operand1": op1.value, "operand2": op2.value, "operator": opr.value});
+  // var data = JSON.stringify({"operand1": op1.valueAsNumber, "operand2": op2.valueAsNumber, "operator": opr.value});
+  console.log(data);
+
+  var xhr = new XMLHttpRequest();
+  //var url = "http://localhost:5000/eval/";
+  var url = "http://192.168.43.212:5000/eval"
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+
+  var json = '';
+  xhr.onreadystatechange = function ()
+  {
+      if (xhr.readyState === 4 && xhr.status === 200)
+      {
+          json = JSON.parse(xhr.responseText);
+          console.log('in onreadystatechange')
+          console.log(json)
+          document.getElementById('total_sum').value = json.result
+
+          // add_row(json.result);
+          // reset();
+          //console.log(json.email + ", " + json.password);
+      }
+  };
+
+  xhr.send(data);
+}
