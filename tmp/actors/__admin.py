@@ -4,6 +4,7 @@ from .client import BaseClient
 from .__parent import Parent
 from .__student import Student
 from .__teacher import Teacher
+from db_handler import firebase_handler as fb_handle
 
 class Admin(BaseClient):
     """
@@ -11,9 +12,14 @@ class Admin(BaseClient):
     It represents an admin interacting with the web interface.
     """
 
-    DB_URL = "/Admin" # TODO: Discuss
+    DB_URL = "/Admins" # TODO: Discuss
 
-    def __init__(self, username, id, name, db_handler):
+    STUDENT = 'student'
+    TEACHER = 'teacher'
+    PARENT = 'parent'
+    ADMIN = 'admin'
+
+    def __init__(self, username, id, name):
         """
         actors.__admin.Admin: This class is a derived class from the ABC - actors.client.BaseClass.
         It represents an admin interacting with the web interface.
@@ -24,7 +30,6 @@ class Admin(BaseClient):
         name: Name of the Admin
         """
         super().__init__(username, id, name)
-        self.db_handler = db_handler
 
     def set_name(self, name):
         """
@@ -62,15 +67,31 @@ class Admin(BaseClient):
         """
         return super().get_id()
 
-    def create_user(self, client):
-        base_client_error = "Client to be created should be of type actors.client.BaseClient"
-        assert isinstance(client, BaseClient), base_client_error
+    @staticmethod
+    def create_user(fb_url, client_dict):
+        db_handler = fb_handle.FirebaseEntryPoint.create()
+        db_handler.add_data(fb_url, client_dict)
 
-        if isinstance(client, Student):
-            self.db_handler.add_data(Student.DB_URL, client.convert_to_dict())
+    @staticmethod
+    def create_user_instance(data):
+        if data['usertype'] == Admin.STUDENT:
+            client = Student(
+                data['username'], data['id'], data['name'], data['grade'])
+            if 'marks' in data:
+                for marks in data['marks']:
+                    client.add_marks(marks)
 
-        if isinstance(client, Teacher):
-            self.db_handler.add_data(Teacher.DB_URL, client.convert_to_dict())
+        elif data['usertype'] == Admin.TEACHER:
+            client = Teacher(data['username'], data['id'], data['name'])
+            if 'grades' in data:
+                for grade in data['grades']: client.add_grade(grade)
 
-        if isinstance(client, Parent):
-            self.db_handler.add_data(Parent.DB_URL, client.convert_to_dict())
+        elif data['usertype'] == Admin.PARENT:
+            client = Parent(
+                data['username'], data['id'], data['name'], data['stud_id'])
+
+        else:
+            client = Admin(
+                data['username'], data['id'], data['name'])
+
+        return client
