@@ -16,35 +16,44 @@
     <h2 class="col-xs-6 col-xs-offset-3 text-center log-head"> Create new MatHub user!</h2>
 </div>
 <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+        {% include 'includes/_messages.html' %}
+    </div>
+</div>
+<div class="row">
     <div class="col-xs-10 col-xs-offset-1" id="form">
         <form method="POST" action="/create-user">
-            <div class="form-group col-xs-6 col-xs-offset-3 text-center radios">
-                <!-- <div class="radio">
-                    <label>
-                        <input type="radio" name="optionRadios" id="student-radio" value="student" checked> Student
-                    </label>
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="optionRadios" id="teacher-radio" value="teacher"> Teacher
-                    </label>
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="optionRadios" id="parent-radio" value="parent"> Parent
-                    </label>
+            <div class="row">
+                <div class="form-group col-xs-6 col-xs-offset-3">
+                    <label for="usertype">Select User type</label>
+                    <select id="usertype" class="form-control" name="usertype">
+                        <option value="selection">Select usertype</option>
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="parent">Parent</option>
+                        <option value="admin">Admin</option>
+                    </select>
                 </div>
             </div>
-            <div class="form-group col-xs-10 col-xs-offset-1 email">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email"  name="email">
+            <div class="row">
+                <div class="form-group col-xs-6 col-xs-offset-3">
+                    <label for="username">Username</label>
+                    <input type="email" class="form-control" id="username" name="username" placeholder="Username">
+                </div>
             </div>
-            <div class="form-group col-xs-10 col-xs-offset-1 password">
-                <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd"  name="pwd">
-            </div> -->
-            <button type="submit" id="create-user-btn" class="btn btn-primary col-xs-4 col-xs-offset-4">Create User</button>
+            <div class="row">
+                <div class="form-group col-xs-6 col-xs-offset-3">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                </div>
+            </div>
+            <div id="extra-details"></div>
+            <button type="submit" id="create-user-btn" class="btn btn-primary col-xs-2 col-xs-offset-5">Create User</button>
         </form>
     </div>
 </div>
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/create_user.js') }}"></script>
+{% endblock %}
 {% endblock %}
