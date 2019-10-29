@@ -19,3 +19,8 @@ def is_username(db_handler, db_url, username):
 
 def is_password_correct(password_candidate, password):
     return sha256_crypt.verify(password_candidate, password)
+
+def default_password_generator(username, id):
+    id = id.lower()
+    username = '-'.join(username.split('.'))
+    return id + '_' + username
