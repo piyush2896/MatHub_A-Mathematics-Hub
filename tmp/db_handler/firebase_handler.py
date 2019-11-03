@@ -79,13 +79,16 @@ class FirebaseEntryPoint:
 
     def retrieve_data(self, firebase_url, username):
         result = requests.get(self.__make_url(firebase_url, username))
-        return result.json()
+        # Firebase safegaurd. They mock around and change return type
+        # Sometimes it is sending a dictionary with its own unique key as key and value
+        # as the data. While sometimes it sends the data as dictionary itself.
+        result = result.json()
+        if result == None or not isinstance(list(result.items())[0][1], dict):
+            return result
+        return list(result.items())[0][1]
 
     def retrieve_password_from_fb_data(self, data):
-        data_to_list_of_tuples = list(data.items())
-        data_dict = data_to_list_of_tuples[0][1]
-        import pdb; pdb.set_trace()
-        return data_dict['password']
+        return data['password']
 
     def retrieve_last_id(self, firebase_url, log_file=None):
         try:
@@ -131,7 +134,6 @@ class FirebaseEntryPoint:
 
     def increment_login_count(self, firebase_url, username):
         data = self.retrieve_data(firebase_url, username)
-        data = list(data.items())[0][1]
         data['login_count'] += 1
         requests.put(
             self.__make_url(firebase_url, username),
