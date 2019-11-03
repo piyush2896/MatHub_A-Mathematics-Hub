@@ -1,9 +1,11 @@
-@font-face {
+@font-face 
+{
    font-family: myFirstFont;
    src: url(../resources/USBI.ttf);
 }
 
-* {
+* 
+{
    font-family: myFirstFont;
 }
 
@@ -12,7 +14,8 @@ body
 background-color:#88ceb2;
 }
 
-h2{
+h2
+{
 text-align:center;
 }
 
@@ -23,11 +26,15 @@ left:47%;
 }
 #a
 {
-background-color:#213334; 
-padding-right:10%; 
+background-color:#213334;
+padding-right:10%;
 padding-left:10%;
 text-align:center;
 position:relative;
 left:40%;
 }
 
+#b2
+{
+background-color:#213334;
+}

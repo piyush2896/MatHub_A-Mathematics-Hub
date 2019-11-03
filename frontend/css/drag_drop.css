@@ -1,0 +1,202 @@
+
+#l1
+{
+padding-left:20%;
+padding-top:30%;
+}
+
+#b1
+{
+  background-color:#213534;
+  padding-right:17%;
+  padding-left:17%;
+  font-size: 140%;
+  color: white;
+}
+
+p
+{
+  font-size:300%;
+  padding-left:20%;
+}
+
+#d1_buttons
+{
+  background-color:black;
+  height:100%;
+}
+
+#d2_workspace
+{
+  background-color:#88ceb2;
+  height:100%;
+}
+
+#d3_result
+{
+  background-color:#a3ffda;
+  height:100%;
+}
+#cardPile {
+  margin: 0 auto;
+  background: #252525;
+}
+
+#cardPile
+{
+  width: 410px;
+  height: 420px;
+  padding: 20px;
+  border: 2px solid #333;
+}
+
+#cardPile div {
+  float: left;
+  width: 58px;
+  height: 58px;
+  /* padding: 9px; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  margin: -12 0 10 10px;
+  background: #fff;
+}
+
+
+#cardPile div {
+  background: #00714c;
+  color: #fff;
+  font-size: 50px;
+  text-shadow: 0 0 3px #000;
+}
+
+#content {
+  margin: 20px 70px;
+  text-align: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Add some margin to the page and set a default font and colour */
+@font-face
+{
+   font-family: myFirstFont;
+   src: url(../resources/USBI.ttf);
+}
+
+*
+{
+   font-family: myFirstFont;
+}
+
+body {
+  margin: 30px;
+  /* font-family: "Georgia", serif; */
+  line-height: 1.8em;
+  color: #333;
+}
+
+/* Give headings their own font */
+
+/* h1, h2, h3, h4 {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+} */
+
+/* Main content area */
+
+
+
+/* Header/footer boxes */
+
+.wideBox {
+  clear: both;
+  text-align: center;
+  background: #99ebff;
+  border: 1px solid #333;
+}
+
+.wideBox h1 {
+  font-weight: bold;
+  color: #666;
+  font-size: 1.5em;
+}
+
+/* Slots for final card positions */
+
+#cardSlots {
+  margin: 50px auto 0 auto;
+  background: #88ceb2;
+}
+
+#total_sum {
+  margin: 10px auto 0 auto;
+  background: #ddf;
+}
+
+/* The initial pile of unsorted cards */
+
+
+#cardSlots{
+  width: 380px;
+  height: 120px;
+  padding: 20px;
+  border: 2px solid #333;
+}
+
+#total_sum {
+  width: 210px;
+  height: 90px;
+  padding-left: 20;
+  padding-right: 20;
+  padding-top: 20;
+  border: 2px solid #333;
+  font-size: 50px;
+  background-color: #a3ffda;
+}
+
+
+/* Individual cards and slots */
+
+#cardSlots div{
+  float: left;
+  width: 58px;
+  height: 78px;
+  padding: 9px;
+  padding-top: 40px;
+  padding-bottom: 0;
+  border: 2px solid #333;
+  border-radius: 10px;
+  margin: -12 0 10 10px;
+  background: #fff;
+}
+
+
+#cardSlots div:first-child, #cardPile div:first-child {
+  margin-left: 0;
+}
+
+#cardSlots div.hovered {
+  background: #aaa;
+}
+
+
+
+#cardSlots div {
+  background: #00714c;
+  color: #fff;
+  font-size: 50px;
+  text-shadow: 0 0 3px #000;
+}
