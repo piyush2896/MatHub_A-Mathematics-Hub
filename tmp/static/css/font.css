@@ -1,0 +1,8 @@
+font-face {
+    font-family: myFirstFont;
+    src: url(/static/resources/USBI.ttf);
+ }
+ 
+ * {
+    font-family: myFirstFont;
+ }
