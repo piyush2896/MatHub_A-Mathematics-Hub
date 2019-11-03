@@ -72,7 +72,6 @@ def login():
             flask.session['usertype'] = usertype
 
             data = __get_user_data(username, usertype)
-            data = list(data.items())[0][1]
             data['usertype'] = usertype
 
             __login_count_incrementer(usertype, username)
@@ -103,7 +102,6 @@ def admin_login():
             flask.session['usertype'] = actors.ADMIN
 
             data = __get_user_data(username, actors.ADMIN)
-            data = list(data.items())[0][1]
             data['usertype'] = actors.ADMIN
 
             __login_count_incrementer(actors.ADMIN, username)
@@ -159,6 +157,22 @@ def create_user():
         return flask.render_template('create_user.html')
     else:
         return flask.redirect(flask.url_for('login'))
+
+@app.route('/logout')
+def logout():
+    if 'logged_in' in flask.session:
+        flask.session['logged_in'] = False
+
+    if 'usertype' in flask.session:
+        flask.session['usertype'] = None
+
+    if 'username' in flask.session:
+        flask.session['username'] = None
+
+    if 'client' in flask.session:
+        flask.session['client'] = None
+
+    return flask.redirect(flask.url_for('login'))
 
 if __name__ == '__main__':
     app.secret_key = "mathub-ser515"
