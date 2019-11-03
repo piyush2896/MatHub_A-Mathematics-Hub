@@ -15,3 +15,8 @@ PARENT_ID_PREFIX = 'P'
 ADMIN_ID_PREFIX = 'A'
 
 START_ID = 100
+
+STUDENT = 'student'
+ADMIN = 'admin'
+TEACHER = 'teacher'
+PARENT = 'parent'

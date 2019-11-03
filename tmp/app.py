@@ -42,11 +42,15 @@ def index():
 
 @app.route('/boards')
 def boards():
-    return flask.render_template('boards.html')
+    if 'logged_in' in flask.session and flask.session['logged_in']:
+        return flask.render_template('boards.html')
+    return flask.redirect(flask.url_for('login'))
 
 @app.route('/arithmetic_board')
 def arithmetic_board():
-    return flask.render_template('arith.html')
+    if 'logged_in' in flask.session and flask.session['logged_in']:
+        return flask.render_template('arith.html')
+    return flask.redirect(flask.url_for('login'))
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -148,11 +152,10 @@ def create_user():
 
             password = login_helper.default_password_generator(username, data['id'])
             data['password'] = sha256_crypt.encrypt(password)
-            print(password)
 
             actors.Admin.create_user(fb_url, data)
             
-            flask.flash('User Created!', 'success')
+            flask.flash('User Created with ID: {}'.format(data['id']), 'success')
         return flask.render_template('create_user.html')
     else:
         return flask.redirect(flask.url_for('login'))

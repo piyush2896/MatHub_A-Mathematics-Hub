@@ -84,6 +84,7 @@ class FirebaseEntryPoint:
     def retrieve_password_from_fb_data(self, data):
         data_to_list_of_tuples = list(data.items())
         data_dict = data_to_list_of_tuples[0][1]
+        import pdb; pdb.set_trace()
         return data_dict['password']
 
     def retrieve_last_id(self, firebase_url, log_file=None):
