@@ -24,12 +24,12 @@
 </div>
 
 <div class="row">
-    <a href="" class="btn btn-default btn-board col-xs-offset-4 col-xs-4">Game Board</a>
+    <a href="{{ url_for('game_board') }}" class="btn btn-default btn-board col-xs-offset-4 col-xs-4">Game Board</a>
 </div>
 <div class="row">
-    <a href="" class="btn btn-default btn-board col-xs-offset-4 col-xs-4">Practice Board</a>
+    <a href="{{ url_for('practice_board') }}" class="btn btn-default btn-board col-xs-offset-4 col-xs-4">Practice Board</a>
 </div>
 <div class="row">
-    <a href="" class="btn btn-default btn-board col-xs-offset-4 col-xs-4">Game Assignments</a>
+    <a href="{{ url_for('assignment_board') }}" class="btn btn-default btn-board col-xs-offset-4 col-xs-4">Game Assignments</a>
 </div>
 {% endblock %}

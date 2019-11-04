@@ -6,6 +6,7 @@
 
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/arith.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/drag_drop.css')}}">
 {% endblock %}
 
 {% include 'includes/_navbar.html' %}
@@ -22,7 +23,10 @@
 <div id='results'></div>
 
 
-<form class="form-inline text-center" id="f" >
+{% include 'includes/_drag_drop.html'%}
+
+
+<!-- <form class="form-inline text-center" id="f" >
     <div class="form-group">
         <input type="number" class="form-control col-xs-offset-2 col-xs-2 form-item" placeholder="Operand 1" id="a" name='input1'>
 
@@ -37,9 +41,9 @@
         <input disabled class="form-control col-xs-2" rows="1" placeholder="Result" id="result_display"></input>
 
     </div>
-</form>
+</form> -->
 {% endblock %}
 
 {% block js %}
-<script src="{{ url_for('static', filename='js/arith.js')}}"></script>
+<script src="{{ url_for('static', filename='js/drag_drop.js') }}"></script>
 {% endblock %}
