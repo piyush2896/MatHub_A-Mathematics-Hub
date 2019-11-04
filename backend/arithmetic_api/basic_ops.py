@@ -19,7 +19,8 @@ class OperatorImplementor:
 			'+': add,
 			'-': sub,
 			'*': mul,
-			'/': div
+			'/': div,
+			'^': power
 		}
 		self.__ops_available = set(self.__ops_to_func.keys())
 		OperatorImplementor.__instance = self
@@ -77,3 +78,15 @@ def div(data):
 	division of operand1 and operand2
 	"""
 	return data['operand1'] / data['operand2']
+def power(data):
+    """
+    arithmetic_api.power: operand1 to power operand2
+
+    @params
+    data: a dictionary containing two key-value pairs, keys 'operand1' and 'operand2' for respective operand value.
+
+    @returns
+    operand1 to power operand2
+
+    """
+    return data['operand1'] ** data['operand2']
