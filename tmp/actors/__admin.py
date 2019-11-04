@@ -1,5 +1,3 @@
-import numpy as np
-
 from .client import BaseClient
 from .__parent import Parent
 from .__student import Student
