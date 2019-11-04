@@ -79,7 +79,7 @@ def login():
 
     if flask.request.method == 'POST':
         usertype = flask.request.form['optionRadios']
-        username = flask.request.form['email']
+        username = flask.request.form['email'].lower()
         password_candidate = flask.request.form['pwd']
 
         is_verified, error_if_any = __login_helper(
@@ -109,7 +109,7 @@ def admin_login():
         return flask.redirect(flask.url_for('boards'))
 
     if flask.request.method == 'POST':
-        username = flask.request.form['email']
+        username = flask.request.form['email'].lower()
         password_candidate = flask.request.form['pwd']
 
         is_verified, error_if_any = __login_helper(
@@ -135,7 +135,7 @@ def admin_login():
 def create_user():
     if flask.session['logged_in'] and flask.session['usertype'] == actors.ADMIN:
         if flask.request.method == 'POST':
-            username = flask.request.form['username']
+            username = flask.request.form['username'].lower()
             usertype = flask.request.form['usertype']
             name = flask.request.form['name']
 
