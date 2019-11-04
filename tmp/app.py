@@ -52,6 +52,24 @@ def arithmetic_board():
         return flask.render_template('arith.html')
     return flask.redirect(flask.url_for('login'))
 
+@app.route('/game-board')
+def game_board():
+    if 'logged_in' in flask.session and flask.session['logged_in']:
+        return flask.render_template('arith.html')
+    return flask.redirect(flask.url_for('login'))
+
+@app.route('/practice-board')
+def practice_board():
+    if 'logged_in' in flask.session and flask.session['logged_in']:
+        return flask.render_template('arith.html')
+    return flask.redirect(flask.url_for('login'))
+
+@app.route('/assignment-board')
+def assignment_board():
+    if 'logged_in' in flask.session and flask.session['logged_in']:
+        return flask.render_template('arith.html')
+    return flask.redirect(flask.url_for('login'))
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if 'logged_in' in flask.session and flask.session['logged_in']:
@@ -173,6 +191,10 @@ def logout():
         flask.session['client'] = None
 
     return flask.redirect(flask.url_for('login'))
+
+@app.route('/check')
+def check():
+    return flask.render_template('temp.html', operators=['+', '-', 'x', '÷'])
 
 if __name__ == '__main__':
     app.secret_key = "mathub-ser515"
