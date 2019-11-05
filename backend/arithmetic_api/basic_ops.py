@@ -78,6 +78,7 @@ def div(data):
 	division of operand1 and operand2
 	"""
 	return data['operand1'] / data['operand2']
+
 def power(data):
     """
     arithmetic_api.power: operand1 to power operand2
