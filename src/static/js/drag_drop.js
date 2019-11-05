@@ -30,12 +30,12 @@ $(document).ready(function () {
 
   opcardspace.array = ['+', '-', 'x', '/', '^']
 
-  for (i = 0; i < 10; i++) {
+  for (i = 0; i < cardspace.array.length; i++) {
     card = new Card(cardspace.array[i])
     $("#cardPile").append(card.element)
   }
 
-  for (i = 0; i < 5; i++) {
+  for (i = 0; i < opcardspace.array.length; i++) {
     card = new OpCard(opcardspace.array[i])
     $("#cardPile").append(card.element)
   }

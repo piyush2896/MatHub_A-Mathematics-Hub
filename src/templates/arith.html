@@ -4,6 +4,10 @@
 <title>Arithmetic operations</title>
 {% endblock %}
 
+{% block meta %}
+<meta id="usertype" data-usertype="{{usertype}}" data-grade="{{grade}}" data-username="{{username}}">
+{% endblock %}
+
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/arith.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/drag_drop.css')}}">
