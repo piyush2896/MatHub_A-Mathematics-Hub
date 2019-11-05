@@ -12,7 +12,6 @@ passlib==1.7.1
 requests==2.22.0
 requests-oauthlib==1.0.0
 sh==1.12.14
-tensorflow-probability-gpu==0.3.0
 urllib3==1.25.6
 Werkzeug==0.16.0
 wincertstore==0.2
