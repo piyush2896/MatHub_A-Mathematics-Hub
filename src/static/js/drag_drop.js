@@ -107,7 +107,12 @@ $(document).ready(function () {
   });
 
   $('#button1').click(function () {
-    call_function(op1, op2, opr);
+    data = {
+      'operand1': parseFloat(op1),
+      'operand2': parseFloat(op2),
+      'operator': opr
+    }
+    restful_call('http://127.0.0.1:5000/eval', data, 'POST', ops_api_callback);
     add_last_cards(op1, op2, opr);
     clear_dropable();
     cardspace.array_member = [];
@@ -134,24 +139,6 @@ function clear_dropable() {
   $('#cardSlots').html("");
 }
 
-
-function call_function(op1, op2, opr) {
-  var data = JSON.stringify({ "operand1": parseFloat(op1), "operand2": parseFloat(op2), "operator": opr });
-
-  var xhr = new XMLHttpRequest();
-  var url = "http://localhost:5000/eval";
-  xhr.open("POST", url, true);
-  xhr.setRequestHeader("Content-Type", "application/json");
-
-  var json = '';
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      json = JSON.parse(xhr.responseText);
-      console.log('in onreadystatechange')
-      console.log(json)
-      $('#total_sum').text(json.result);
-    }
-  };
-  console.log(data);
-  xhr.send(data);
+function ops_api_callback(data){
+  $('#total_sum').text(data.result);
 }
