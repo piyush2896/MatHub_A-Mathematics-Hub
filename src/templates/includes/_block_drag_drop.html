@@ -1,0 +1,56 @@
+<button type="button" class="fab-btn-play" id="fab_btn_play" title="Play">
+    <span class="glyphicon glyphicon-play"></span>
+</button>
+<button type="button" class="fab-btn-erase" id='fab_btn_erase' title="Erase" onclick="clearWorkspace()">
+    <span class="glyphicon glyphicon-erase"></span>
+</button>
+<input type="file" id="file_upload" style="display: none"></input>
+<button type="button" class="fab-btn-upload" id='fab_btn_upload' title="Upload">
+    <span class="glyphicon glyphicon-upload"></span>
+</button>
+
+<button type="button" class="fab-btn-download" id='fab_btn_download' title="Download" onclick="downloadWordkspace()">
+    <span class=" 	glyphicon glyphicon-download"></span>
+</button>
+<div class="row" style="height:94vh;">
+    <main class="col-xs-8 nopadding">
+        <div class="blockly-editor">
+            <div id="blockly-div" style="height: 94vh;"></div>
+            <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+                <category name="print" colour="200">
+                    <block type="text_print"></block>
+                </category>
+                <category name="number" colour="200">
+                    <block type="math_number">
+                        <field name="NUM">0</field>
+                    </block>
+                </category>
+                <category name="arithmetic" colour="200" expanded="true">
+                    {% if session.client.grade |int >= 6 %}
+                    <block type="math_arithmetic_grade6"></block>
+                    {% elif session.client.grade |int >=4 %}
+                    <block type="math_arithmetic_grade4"></block>
+                    {% else %}
+                    <block type="math_arithmetic_grade1"></block>
+                    {% endif %}
+                </category>
+                {% if session.client.grade |int >=10 %}
+                <category name="advanced" colour="200">
+                    <block type="math_trig"></block>
+                    <sep gap="8"></sep>
+                    <block type="math_constant"></block>
+                    <sep gap="8"></sep>
+                    <block type="math_single"></block>
+                    <sep gap="8"></sep>
+                </category>
+                {% endif %}
+            </xml>
+        </div>
+    </main>
+
+    <div class="col-xs-4 text-center" style="background-color: #101a19; height:100%">
+        <p class="speech" id="speech">Hello, there!</p>
+        <img class="img-responsive" style="margin-left: auto; margin-right: auto;"
+            src="{{ url_for('static', filename='img/logo.png')}}" alt="MatHub">
+    </div>
+</div>
