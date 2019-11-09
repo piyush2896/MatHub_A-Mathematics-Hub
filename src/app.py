@@ -195,10 +195,6 @@ def logout():
 
     return flask.redirect(flask.url_for('login'))
 
-@app.route('/check')
-def check():
-    return flask.render_template('temp.html', operators=['+', '-', 'x', '÷'])
-
 if __name__ == '__main__':
     app.secret_key = "mathub-ser515"
     app.run(host='0.0.0.0', port=3000, debug=True)
