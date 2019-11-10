@@ -40,6 +40,9 @@ $(document).ready(function () {
     $('#fab_btn_play').click(function() {
         var code = Blockly.Python.workspaceToCode(Blockly.getMainWorkspace());
         console.log(code);
+        restful_call('http://localhost:3000/eval', {'exp' : code}, 'POST', function(data){
+            console.log(data);
+        });
     })
 });
 
