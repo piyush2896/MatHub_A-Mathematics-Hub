@@ -195,6 +195,18 @@ def logout():
 
     return flask.redirect(flask.url_for('login'))
 
+
+@app.route('/eval', methods=['GET', 'POST'])
+def eval():
+    exp = flask.request.json['exp']
+    results = []
+    exp = exp.replace('print', 'results.append')
+    try:
+        exec(exp)
+        return flask.jsonify({'results': results, 'success': True})
+    except Exception as e:
+        return flask.jsonify({'results': results, 'success': False})
+
 if __name__ == '__main__':
     app.secret_key = "mathub-ser515"
     app.run(host='0.0.0.0', port=3000, debug=True)
