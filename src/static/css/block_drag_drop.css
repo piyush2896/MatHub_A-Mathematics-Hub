@@ -1,0 +1,115 @@
+.navbar {
+    margin-bottom: 0;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Src: https://www.sitepoint.com/pure-css3-speech-bubbles/ */
+p.speech {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    /* line-height: 3em; */
+    padding-top: 10px;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 8px solid #223539;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    -webkit-box-shadow: 2px 2px 4px #223539;
+    -moz-box-shadow: 2px 2px 4px #223539;
+    box-shadow: 2px 2px 4px #223539;
+    margin-top:1%;
+    word-wrap: break-word;
+}
+
+p.speech:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 100px;
+    top: 90px;
+    border: 25px solid;
+    border-color: #223539 #223539 transparent transparent ;
+}
+
+p.speech:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 108px;
+    top: 84px;
+    border: 15px solid;
+    border-color: #fff #fff transparent transparent;
+}
+
+.fab-btn-play {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #101a19 ;
+    text-align: center;
+    line-height: 50px;
+    position: fixed;
+    right: 22%;
+    bottom: 50px;
+    z-index: 100;
+}
+
+.fab-btn-erase {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #101a19 ;
+    text-align: center;
+    line-height: 50px;
+    position: fixed;
+    right: 17%;
+    bottom: 50px;
+    z-index: 100;
+}
+
+.fab-btn-upload {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #101a19 ;
+    text-align: center;
+    line-height: 50px;
+    position: fixed;
+    right: 12%;
+    bottom: 50px;
+    z-index: 100;
+}
+
+.fab-btn-download {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #101a19 ;
+    text-align: center;
+    line-height: 50px;
+    position: fixed;
+    right: 7%;
+    bottom: 50px;
+    z-index: 100;
+}
+
+.glyphicon {
+    line-height: 1.45;
+}

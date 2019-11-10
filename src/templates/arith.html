@@ -1,32 +1,28 @@
-{% extends 'layout.html' %}
+{% extends "layout.html"%}
 
 {% block title %}
-<title>Arithmetic operations</title>
+<title>Arithmetic Operations</title>
 {% endblock %}
 
 {% block css %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/arith.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/drag_drop.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/block_drag_drop.css')}}">
 {% endblock %}
 
 {% include 'includes/_navbar.html' %}
+
 {% block body %}
-<div class='row'>
-    <h1>Mathub </h1>
-</div>
-<div class='row'>
-    <h2> Arithmetic Operations </h2>
-</div>
 
-</br></br></br>
+{% include 'includes/_block_drag_drop.html'%}
 
-<div id='results'></div>
-
-
-{% include 'includes/_drag_drop.html'%}
+{% block js %}
+<script src="{{ url_for('static', filename='js/blockly_compressed.js') }}"></script>
+<script src="{{ url_for('static', filename='js/blocks/colour.js') }}"></script>
+<script src="{{ url_for('static', filename='js/blocks/math.js') }}"></script>
+<script src="{{ url_for('static', filename='js/blocks/text.js') }}"></script>
+<script src="{{ url_for('static', filename='js/msg/en.js') }}"></script>
+<script src="{{ url_for('static', filename='js/generators/python_compressed.js') }}"></script>
+<script src="{{ url_for('static', filename='js/block_drag_drop.js') }}"></script>
 
 {% endblock %}
 
-{% block js %}
-<script src="{{ url_for('static', filename='js/drag_drop.js') }}"></script>
 {% endblock %}
