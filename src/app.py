@@ -124,6 +124,7 @@ def admin_login():
 
             data = __get_user_data(username, actors.ADMIN)
             data['usertype'] = actors.ADMIN
+            data['grade'] = 12
 
             __login_count_incrementer(actors.ADMIN, username)
 
