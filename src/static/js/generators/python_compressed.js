@@ -86,3 +86,8 @@ Blockly.Python.text_replace=function(a){var b=Blockly.Python.valueToCode(a,"TEXT
 Blockly.Python.variablesDynamic={};Blockly.Python.variables_get_dynamic=Blockly.Python.variables_get;Blockly.Python.variables_set_dynamic=Blockly.Python.variables_set;
 
 Blockly.Python.math_arithmetic_grade1=Blockly.Python.math_arithmetic_grade4=Blockly.Python.math_arithmetic_grade6=Blockly.Python.math_arithmetic;
+
+Blockly.Python['braces'] = function(block) {
+    var statements_brace = Blockly.Python.statementToCode(block, 'brace');
+    return statements_brace;
+  };
