@@ -201,6 +201,8 @@ def eval():
     exp = flask.request.json['exp']
     results = []
     exp = exp.replace('print', 'results.append')
+    exp = exp.replace(' ', '')
+    exp = exp.replace('import', 'import ')
     try:
         exec(exp)
         return flask.jsonify({'results': results, 'success': True})
