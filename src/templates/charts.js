@@ -9,9 +9,12 @@ var myChart = new Chart(ctx, {
   type: 'line',
   data: {
     labels: student_no,
+
     datasets: [
       { 
-        data: grades
+        data: grades,
+        borderColor: "blue",
+        backgroundColor:"#88ceb2",
       }
     ]
   }
