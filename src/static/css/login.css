@@ -1,6 +1,6 @@
 @font-face {
    font-family: myFirstFont;
-   src: url(static/resources/USBI.ttf);
+   src: url('/static/resources/USBI.ttf');
 }
 
 * {
@@ -19,7 +19,7 @@ body {
 }
 
 #singup-btn {
-   background-color:#213334; 
+   background-color:#213334;
 }
 
 #form {
@@ -42,10 +42,12 @@ body {
 
 .radios{
    margin-top: 1%;
+   font-size: 1.5em;
 }
 
 .radio {
    display: inline;
+   margin-left: 10%;
 }
 
 @media only screen and (max-width: 470px){
