@@ -15,7 +15,11 @@ var myChart = new Chart(ctx, {
         data: grades,
         borderColor: "blue",
         backgroundColor:"#88ceb2",
+        pointBackgroundColor: "yellow",
+        pointRadius: "6",
+        fill: true,
       }
     ]
+
   }
 });
