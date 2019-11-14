@@ -26,6 +26,10 @@ left:47%;
   /* margin-left: 1%; */
 }
 
+#form1{
+    font-size: 1.7em;
+}
+
 #logo{
   max-width:5%;
   height:auto;
@@ -57,13 +61,18 @@ left:40%;
   #create-user-btn, #reset-btn {
      background-color:#213334;
      text-align:center;
-     /* max-width: 100%;
-     height: auto; */
-     margin-bottom: 1.5%;
-     font-size: 2.5em;
+     width: 40%;
+     margin-left: 40%;
+     font-size: 1.2em;
+  }
+
+  #username, #name, #password, #conf_password{
+    margin-right: 40%;
+    width:140%;
   }
 
   #CreateUserHead{
    font-size: 1.5em;
+   margin-left: 22%;
   }
 }
