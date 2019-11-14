@@ -39,16 +39,31 @@ $(document).ready(function () {
 
     $('#fab_btn_play').click(function() {
         var code = Blockly.Python.workspaceToCode(Blockly.getMainWorkspace());
-        console.log(code);
         restful_call('http://localhost:3000/eval', {'exp' : code}, 'POST', function(data){
-            console.log(data);
+            code = code.replace('import math', '');
+            code = code.split('print').join('');
+            code = code.split('math.').join('');
+            code = code.split('\n');
+            code = code.filter(function(el){
+                return el != '';
+            });
+            result = '';
+            for(var i = 0; i < code.length; i++){
+                result = result + code[i].trim() + '=' + data['results'][i] + '<br>';
+            }
+            $('.slider').html(result);
+            $('.slider').removeClass('closed');
         });
-    })
+    });
+
+    $('.slider').addClass('closed');
 });
 
 function clearWorkspace() {
     Blockly.getMainWorkspace().clear();
     $('#speech').text("Hello, there!");
+    $('.slider').addClass('closed');
+    $('.slider').html('Your Results will show up here...');
 }
 
 function loadWorkspace(xml) {
@@ -92,5 +107,13 @@ function handleFileSelection(evt){
 
             loadWorkspace(xmlDom);
         };
+    }
+}
+
+function toggle_slider() {
+    if($('.slider').hasClass('closed')){
+        $('.slider').removeClass('closed');
+    }else{
+        $('.slider').addClass('closed');
     }
 }
