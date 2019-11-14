@@ -9,20 +9,20 @@
 {% endblock %}
 
 {% block body %}
-<div class="row" style="margin-top: 2%">
-    <img class="col-xs-2 col-xs-offset-5 img-responsive text-center" src="{{ url_for('static', filename='img/logo.png')}}" alt="MatHub" >
+<div class="row" style="margin-top: 5%">
+    <img class="col-xs-1 col-xs-offset-1 img-responsive text-center" src="{{ url_for('static', filename='img/logo.png')}}" alt="MatHub" >
 </div>
 
 <div class="row">
     {% if login_type != 'admin' %}
-    <h2 class="col-xs-6 col-xs-offset-3 text-center log-head"> LogIn to Mathub</h2>
+    <h2 class="col-xs-6 col-xs-offset-1 log-head"> Log in to MatHub</h2>
     {% else %}
-    <h2 class="col-xs-6 col-xs-offset-3 text-center log-head"> Admin LogIn</h2>
+    <h2 class="col-xs-6 col-xs-offset-3 text-center log-head"> Admin Log in</h2>
     {% endif %}
 </div>
 
 <div class="row">
-    <div class="col-xs-10 col-xs-offset-1" id="form">
+    <div class="col-xs-7 col-xs-offset-1" id="form">
         {% if login_type != 'admin' %}
         <form method="POST" action="/login">
         {% else %}
@@ -65,7 +65,7 @@
 <div class="signup">
     <div class="row">
         <div class="col-xs-3 col-xs-offset-1">
-            <h5>Are you an admin? </h3>
+            <h3>Are you an admin? </h3>
         </div>
     </div>
     <div class="row">
