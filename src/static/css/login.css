@@ -15,6 +15,7 @@ body {
    background-color:#213334;
    text-align:center;
    margin-bottom: 3%;
+   margin-left: 10%;
    font-size: 2.2em;
 }
 
@@ -25,6 +26,7 @@ body {
 #form {
    border: 3px solid;
    box-shadow: 5px 5px 5px #213334;
+   font-size: 1.7em;
 }
 
 .email {
@@ -37,31 +39,43 @@ body {
 }
 
 .signup {
-   margin-top: 2%;
+   font-size: 1.5em;
 }
 
 .radios{
    margin-top: 1%;
-   font-size: 1.5em;
+   font-size: 0.75em;
 }
 
 .radio {
    display: inline;
-   margin-left: 10%;
+   margin-left: 5%;
 }
 
 @media only screen and (max-width: 470px){
    .log-head{
-      font-size: 1.4em;
+      font-size: 1em;
+   }
+
+   #form {
+      font-size: 1.2em;
+   }
+
+   .signup{
+     font-size: 1.2em;
+   }
+
+   #LoginToMathub{
+     font-size: 2em;
    }
 }
 
 @media only screen and (max-width: 3800px){
    #singup-btn {
-      font-size: 0.9em;
+      font-size: 0.7em;
    }
 
    #login-btn {
-      font-size: 0.9em;
+      font-size: 0.7em;
    }
 }
