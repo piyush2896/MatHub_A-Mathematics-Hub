@@ -113,3 +113,64 @@ p.speech:after {
 .glyphicon {
     line-height: 1.45;
 }
+
+
+.slider {
+    overflow-y: hidden;
+    max-height: 500px; /* approximate max height */
+
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    background-color: white;
+
+    border-style: solid;
+    border-color: #4CAF50;
+    border-width: 1px;
+
+    font-size: 1.5em;
+    word-wrap: break-word;
+}
+
+.slider.closed {
+    max-height: 0;
+}
+
+.slider-container {
+    bottom: 0px;
+    z-index: 10000;
+    position: fixed;
+    min-height:0px;
+    left:0;
+    right:0;
+}
+
+.slider-toggle{
+    font-size: 1.2em;
+    background-color: transparent;
+    background-repeat:no-repeat;
+    border-width: 2px 2px 0 2px;
+    border-style: solid;
+    border-color: #4CAF50;
+    border-radius: 10px 10px 0 0;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    min-height:0px;
+}
+
+.slider-hr {
+    background-color:#4CAF50;
+    margin:0;
+    border-style: solid;
+    border-color: #4CAF50;
+    border-width: 1px;
+    border-radius: 10px;
+    min-height:0px;
+}
+
+.anticlockwise-90 {
+    transform: rotate(270deg);
+    display:block;
+    font-size: 1em;
+}
