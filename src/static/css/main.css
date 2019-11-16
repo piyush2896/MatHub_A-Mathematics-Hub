@@ -1,7 +1,8 @@
-font-face {
+@font-face {
    font-family: myFirstFont;
-   src: url(/static/resources/USBI.ttf);
+   src: url('/static/resources/USBI.ttf');
 }
+
 
 * {
    font-family: myFirstFont;
@@ -15,29 +16,33 @@ font-face {
   background-color:#213534;
   font-size: 140%;
   width: 100%;
+  /* font-family: myFirstFont; */
   text-align: center;
 }
 
 .mathub-h1 {
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 #separator-block
 {
-  background-image:url('/static/img/bg.jpg');
+  background-image:url('/static/img/bg2.jpg');
   height:100vh;
+  /* height: 100%; */
 }
 
 #login-block
 {
   background-color:#88ceb2;
   height:100vh;
+  /* margin-top: 20vh; */
 }
 
 @media only screen and (max-width: 1123px){
   #login-block {
     width: 100%;
     height: 100vh;
+    /* margin-top: 20vh; */
   }
 
   #separator-block {
@@ -47,12 +52,12 @@ font-face {
 
 @media only screen and (max-width: 563px){
   .mathub-h1 {
-    font-size: 2em;
+    font-size: 3em;
   }
 }
 
 @media only screen and (max-width: 391px){
   .mathub-h1 {
-    font-size: 1.5em;
+    font-size: 2em;
   }
 }

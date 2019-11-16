@@ -9,20 +9,20 @@
 {% endblock %}
 
 {% block body %}
-<div class="row" style="margin-top: 2%">
-    <img class="col-xs-2 col-xs-offset-5 img-responsive text-center" src="{{ url_for('static', filename='img/logo.png')}}" alt="MatHub" >
+<div class="row" style="margin-top: 5%">
+    <img class="col-xs-1 col-xs-offset-3 img-responsive text-center" src="{{ url_for('static', filename='img/logo.png')}}" alt="MatHub" >
 </div>
 
 <div class="row">
     {% if login_type != 'admin' %}
-    <h2 class="col-xs-6 col-xs-offset-3 text-center log-head"> LogIn to Mathub</h2>
+    <h2 class="col-xs-6 col-xs-offset-3 log-head" id="LoginToMathub"> Log in to MatHub</h2>
     {% else %}
-    <h2 class="col-xs-6 col-xs-offset-3 text-center log-head"> Admin LogIn</h2>
+    <h2 class="col-xs-6 col-xs-offset-3 log-head"> Admin Log in</h2>
     {% endif %}
 </div>
 
 <div class="row">
-    <div class="col-xs-10 col-xs-offset-1" id="form">
+    <div class="col-xs-6 col-xs-offset-3" id="form">
         {% if login_type != 'admin' %}
         <form method="POST" action="/login">
         {% else %}
@@ -30,7 +30,7 @@
         {% endif %}
         {% include 'includes/_messages.html' %}
             {% if login_type != 'admin' %}
-            <div class="form-group col-xs-6 col-xs-offset-3 text-center radios">
+            <div class="form-group col-xs-4 col-xs-offset-3 text-center radios">
                 <div class="radio">
                     <label>
                         <input type="radio" name="optionRadios" id="student-radio" value="student" checked> Student
@@ -56,7 +56,7 @@
                 <label for="pwd">Password:</label>
                 <input type="password" class="form-control" id="pwd"  name="pwd">
             </div>
-            <button type="submit" id="login-btn" class="btn btn-primary col-xs-4 col-xs-offset-4">LogIn</button>
+            <button type="submit" id="login-btn" class="btn btn-primary col-xs-5 col-xs-offset-1">Log in</button>
         </form>
     </div>
 </div>
@@ -64,12 +64,12 @@
 {% if login_type != 'admin' %}
 <div class="signup">
     <div class="row">
-        <div class="col-xs-3 col-xs-offset-1">
-            <h5>Are you an admin? </h3>
+        <div class="col-xs-6 col-xs-offset-3" id="question">
+            <h3>Are you an admin? </h3>
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-3 col-xs-offset-1">
+        <div class="col-xs-3 col-xs-offset-3">
             <a href='/admin-login' type="button" id="singup-btn" class="btn btn-primary">Admin LogIn</a>
         </div>
     </div>

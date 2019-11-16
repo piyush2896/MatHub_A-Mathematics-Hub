@@ -1,7 +1,7 @@
 {% extends "layout.html"%}
 
 {% block title %}
-<title>MatHub - Login</title>
+<title>MatHub - Admin</title>
 {% endblock %}
 
 {% block css %}
@@ -11,24 +11,24 @@
 {% include 'includes/_navbar.html' %}
 {% block body %}
 <div class="row" style="margin-top: 2%">
-    <img class="col-xs-2 col-xs-offset-5 img-responsive text-center" src="{{ url_for('static', filename='img/logo.png')}}" alt="MatHub" >
+    <img class="col-xs-2 col-xs-offset-2 img-responsive text-center" id="logo" src="{{ url_for('static', filename='img/logo.png')}}" alt="MatHub" >
 </div>
 <div class="row">
-    <h2 class="col-xs-6 col-xs-offset-3 text-center log-head"> Create new MatHub user!</h2>
+    <h2 class="col-xs-8 col-xs-offset-1 log-head" id="CreateUserHead"> Create new user:</h2>
 </div>
 <div class="row">
     <div class="col-xs-10 col-xs-offset-1">
         {% include 'includes/_messages.html' %}
     </div>
 </div>
-<div class="row">
+<div class="row" id="form">
     <div class="col-xs-10 col-xs-offset-1" id="form">
         <form method="POST" action="/create-user">
             <div class="row">
-                <div class="form-group col-xs-6 col-xs-offset-3">
+                <div class="form-group col-xs-5 col-xs-offset-4">
                     <label for="usertype">Select User type</label>
                     <select id="usertype" class="form-control" name="usertype">
-                        <option value="selection">Select usertype</option>
+                        <option value="selection">-- Select --</option>
                         <option value="student">Student</option>
                         <option value="teacher">Teacher</option>
                         <option value="parent">Parent</option>
@@ -37,19 +37,21 @@
                 </div>
             </div>
             <div class="row">
-                <div class="form-group col-xs-6 col-xs-offset-3">
-                    <label for="username">Username</label>
-                    <input type="email" class="form-control" id="username" name="username" placeholder="Username">
+                <div class="form-group col-xs-5 col-xs-offset-4">
+                    <label for="username">Email</label>
+                    <input type="email" class="form-control" id="username" name="username">
                 </div>
             </div>
             <div class="row">
-                <div class="form-group col-xs-6 col-xs-offset-3">
+                <div class="form-group col-xs-5 col-xs-offset-4">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                    <input type="text" class="form-control" id="name" name="name">
                 </div>
             </div>
+
             <div id="extra-details"></div>
-            <button type="submit" id="create-user-btn" class="btn btn-primary col-xs-2 col-xs-offset-5">Create User</button>
+            <button type="submit" id="create-user-btn" class="btn btn-primary col-xs-3 col-xs-offset-5">Create User</button>
+            <button type="reset" id="reset-btn" class="btn btn-primary col-xs-3 col-xs-offset-5 ">Reset</button>
         </form>
     </div>
 </div>

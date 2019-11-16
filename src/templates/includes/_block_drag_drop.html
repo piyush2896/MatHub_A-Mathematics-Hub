@@ -14,21 +14,21 @@
 </button>
 <div class="row" style="height:94vh;">
     <main class="col-xs-8 nopadding">
-        <div class="blockly-editor">
+        <div class="blockly-editor" >
             <div id="blockly-div" style="height: 94vh;"></div>
             <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-                <category name="start" colour="200">
+                <category name="start" colour="#101a19">
                     <block type="braces"></block>
                 </category>
-                <category name="print" colour="200">
+                <category name="print" colour="#101a19">
                     <block type="text_print"></block>
                 </category>
-                <category name="number" colour="200">
+                <category name="number" colour="#101a19">
                     <block type="math_number">
                         <field name="NUM">0</field>
                     </block>
                 </category>
-                <category name="arithmetic" colour="200" expanded="true">
+                <category name="arithmetic" colour="#101a19" expanded="true">
                     {% if session.client.grade |int >= 6 %}
                     <block type="math_arithmetic_grade6"></block>
                     {% elif session.client.grade |int >=4 %}
@@ -38,7 +38,7 @@
                     {% endif %}
                 </category>
                 {% if session.client.grade |int >=10 %}
-                <category name="advanced" colour="200">
+                <category name="advanced" colour="#101a19">
                     <block type="math_trig"></block>
                     <sep gap="8"></sep>
                     <block type="math_constant"></block>
@@ -53,7 +53,7 @@
 
     <div class="col-xs-4 text-center" style="background-color: #101a19; height:100%">
         <p class="speech" id="speech">Hello, there!</p>
-        <img class="img-responsive" style="margin-left: auto; margin-right: auto;"
+        <img class="img-responsive" style="margin-left: auto; margin-right: auto"
             src="{{ url_for('static', filename='img/logo.png')}}" alt="MatHub">
     </div>
 </div>

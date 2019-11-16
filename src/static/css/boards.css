@@ -1,6 +1,6 @@
 @font-face {
    font-family: myFirstFont;
-   src: url(static/resources/USBI.ttf);
+   src: url(../resources/USBI.ttf);
 }
 
 * {
