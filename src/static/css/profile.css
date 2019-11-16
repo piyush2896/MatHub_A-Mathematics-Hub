@@ -14,3 +14,8 @@ overflow: hidden;
 body {
    background-color:#88ceb2;
 }
+
+h1
+{
+  text-align: center;
+}
