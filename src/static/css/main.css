@@ -26,9 +26,13 @@
 
 #separator-block
 {
-  background-image:url('/static/img/bg2.jpg');
+  background-image:url('/static/img/bg.jpg');
   height:100vh;
   background-size: cover;
+}
+
+#textfields{
+  color: white;
 }
 
 #login-block
@@ -38,11 +42,10 @@
   /* margin-top: 20vh; */
 }
 
-@media only screen and (max-width: 1217px){
+@media only screen and (max-width: 1195px){
   #login-block {
     width: 100%;
     height: 100vh;
-    /* margin-top: 20vh; */
   }
 
   #separator-block {
