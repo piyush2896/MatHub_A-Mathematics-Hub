@@ -2,3 +2,14 @@
    font-family: myFirstFont;
    src: url(../resources/USBI.ttf);
 }
+* {
+   font-family: myFirstFont;
+}
+
+
+html {
+overflow: hidden;
+}
+body {
+   background-color:#88ceb2;
+}
