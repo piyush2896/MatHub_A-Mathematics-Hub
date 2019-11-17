@@ -17,7 +17,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="{{ url_for('boards') }}">Boards <span class="sr-only">(current)</span></a></li>
                 {% if session.usertype == 'admin' %}
-                <li><a href="{{ url_for('boards') }}">All Users</a></li>
+                <li><a href="{{ url_for('cms') }}">All Users</a></li>
                 <li><a href="{{ url_for('create_user') }}">Create New User</a></li>
                 {% endif %}
             </ul>
