@@ -1,0 +1,75 @@
+{% extends "layout.html"%}
+{% block title %}
+<title>MatHub - Profile</title>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/profile.css')}}">
+{% endblock %}
+
+{% block body %}
+<h1> USER PROFILE </h1>
+
+<div class="row dynamic-margin">
+    <div class="col-xs-2 col-xs-offset-5">
+        <img class="img-responsive" src="{{ url_for('static', filename='img/parentprofile.png') }}" alt="MatHub">
+    </div>
+</div>
+
+
+
+<div class="row">
+    <h2 class="col-xs-8 col-xs-offset-1" id="Email"> Email </h2>
+</div>
+
+<div class="row">
+    <h2 class="col-xs-8 col-xs-offset-1" id="Teacher"> Teacher </h2>
+</div>
+
+<div class="row">
+    <a href="{{ url_for('charts') }}" class="btn btn-default btn-board col-xs-offset-4 col-xs-4">Grade Graph</a>
+</div>
+
+
+<div class="container">
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Assignment</th>
+      <th scope="col">Due Date</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      
+      <td>Assignment 1</td>
+      <td>11/11</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      
+      <td>Assignment 2</td>
+      <td>15/11</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      
+      <td>Assignment 3</td>
+      <td>17/11</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+<div class="container">
+  <h2>Progress Bar</h2>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+      <span class="sr-only">70% Complete</span>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
