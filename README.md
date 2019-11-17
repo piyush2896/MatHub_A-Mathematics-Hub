@@ -17,16 +17,21 @@ This project is currently under development with a goal of delivering workable a
 ## How to run?
 - **Step 1:** `git clone https://github.com/piyush2896/Scratch_knockoff.git`
 - **Step 2:** `pip install -r requirements.txt`
-- **Step 3:** Start two terminals
-- **Step 4:** In first terminal:
-  - `cd Scratch_knockoff\backend`
-  - `python app.py`
-  - This will start your arithmetic RESTFul API
-- **Step 5:** In second terminal:
+- **Step 3:** Start a terminal
+- **Step 4:** In the terminal:
   - `cd Scratch_knockoff\src`
   - `python app.py`
-  - This will start your basic dynamic frontend based on flask.
-- **Step 6:** Go to `localhost:3000`:
+- **Step 5:** Go to `localhost:3000`:
   - This will initialize the firebase based Database
   - Default admin username - `admin@mathub.com`
   - Default admin password - `admin` (SHA256 encrypted on firebase)
+  - Example Student1:
+    - Username: `vaishali@mathub.com`
+    - Password: `s103_vaishali@mathub-com`to be updated
+  - Example Student2:
+    - Username: `piyush@mathub.com`
+    - Password: `s105_piyush@mathub-com`
+  - When admin creates a new student, make sure to remember the ID displayed on creation, as that will be a part of the default password for that user. 
+    - Default password format: `<lowercase ID>_<username, with -com replacing .com>`. See Example students for clarification.
+
+
