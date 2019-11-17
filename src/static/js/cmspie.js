@@ -1,9 +1,9 @@
 
-var student_no=[1,2,3,4,5,6,7,8,9,10]
+var student_no=["Student","Teacher","Parent"]
 //For drawing lines
-var grades = [100,95,43,56,70,23,45,6,90,18]
+var grades = [5,6,6]
 
-var ctx2 = document.getElementById("myChart2");
+
 var ctx = document.getElementById("myChart");
 
 var myChart = new Chart(ctx, {
@@ -15,7 +15,7 @@ var myChart = new Chart(ctx, {
       { 
         data: grades,
         borderColor: "blue",
-        backgroundColor:"#88ceb2",
+        backgroundColor:"red",
         pointBackgroundColor: "yellow",
         pointRadius: "6",
         fill: true,
