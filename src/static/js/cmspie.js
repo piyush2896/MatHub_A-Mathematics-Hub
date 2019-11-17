@@ -15,7 +15,7 @@ var myChart = new Chart(ctx, {
       { 
         data: grades,
         borderColor: "blue",
-        backgroundColor:"green",
+        backgroundColor:"white",
         pointBackgroundColor: "yellow",
         pointRadius: "6",
         fill: true,
