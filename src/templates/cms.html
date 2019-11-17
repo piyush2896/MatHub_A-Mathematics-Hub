@@ -6,3 +6,43 @@
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cms.css')}}">
 {% endblock %}
+
+{% block body %}
+<h1> USER MANAGEMENT </h1>
+
+
+<div class="container">
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">User</th>
+      <th scope="col">Type</th>
+      <th scope="col">Date created</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Anish</td>
+      <td>Student</td>
+      <td>10/1</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      
+      <td>Vaishali</td>
+      <td>Student</td>
+      <td>10/1</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      
+      <td>Amudhan</td>
+      <td>Student</td>
+      <td>10/1</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+{% endblock %}
