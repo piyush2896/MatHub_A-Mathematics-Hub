@@ -49,7 +49,7 @@ def boards():
 @app.route('/profile')
 def profile():
     if 'logged_in' in flask.session and flask.session['logged_in']:
-        return flask.render_template('profile.html')
+        return flask.render_template('studprofile.html')
     return flask.redirect(flask.url_for('login'))
 
 @app.route('/charts')
