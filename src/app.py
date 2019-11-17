@@ -120,6 +120,9 @@ def login():
             __login_count_incrementer(usertype, username)
 
             flask.session['client'] = data
+            flask.session['client']['login_count'] += 1 
+            if data['login_count'] == 1:
+                return flask.redirect(flask.url_for('reset_password'))
             return flask.redirect(flask.url_for('boards')) # TODO: Discuss
         else:
             flask.flash(error_if_any, 'danger')
@@ -151,6 +154,9 @@ def admin_login():
             __login_count_incrementer(actors.ADMIN, username)
 
             flask.session['client'] = data
+            flask.session['client']['login_count'] += 1
+            if data['login_count'] == 1:
+                return flask.redirect(flask.url_for('reset_password'))
             return flask.redirect(flask.url_for('create_user')) # TODO: Discuss
         else:
             flask.flash(error_if_any, 'danger')
@@ -231,6 +237,29 @@ def eval():
         return flask.jsonify({'results': results, 'success': True})
     except Exception as e:
         return flask.jsonify({'results': results, 'success': False})
+
+@app.route('/reset-password', methods=['GET', 'POST'])
+def reset_password():
+    if 'logged_in' in flask.session and flask.session['logged_in']:
+        if flask.request.method == 'POST':
+            fb_url = __get_url_from_usetype(flask.session['usertype'])
+            fb_handler = fb_handle.FirebaseEntryPoint.create()
+            
+            client_data = flask.session['client']
+            password = flask.request.form['password']
+            confirm_password = flask.request.form['confirm-password']
+            if password != confirm_password:
+                flask.flash("Passwords doesn't match", 'danger')
+                return flask.render_template('reset_password.html')
+            password = sha256_crypt.encrypt(flask.request.form['password'])
+            client_data['password'] = password
+            flask.session['client'] = client_data
+            
+            fb_handler.update_data(fb_url, client_data)
+            return flask.redirect(flask.url_for('boards'))
+        else:
+            return flask.render_template('reset_password.html')
+    return flask.redirect(flask.url_for('login'))
 
 if __name__ == '__main__':
     app.secret_key = "mathub-ser515"
