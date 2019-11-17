@@ -46,6 +46,28 @@ def boards():
         return flask.render_template('boards.html')
     return flask.redirect(flask.url_for('login'))
 
+@app.route('/profile')
+def profile():
+    if 'logged_in' in flask.session and flask.session['logged_in']:
+        if 'usertype' in flask.session and flask.session['usertype'] == actors.STUDENT:
+            return flask.render_template('studprofile.html')
+        if 'usertype' in flask.session and flask.session['usertype'] == actors.TEACHER:
+            return flask.render_template('teacherprofile.html')
+        if 'usertype' in flask.session and flask.session['usertype'] == actors.PARENT:
+            return flask.render_template('parentprofile.html')
+    return flask.redirect(flask.url_for('login'))
+
+@app.route('/charts')
+def charts():
+    if 'logged_in' in flask.session and flask.session['logged_in']:
+        return flask.render_template('charts.html')
+    return flask.redirect(flask.url_for('login'))
+@app.route('/cms')
+def cms():
+    if 'logged_in' in flask.session and flask.session['logged_in']:
+        return flask.render_template('cms.html')
+    return flask.redirect(flask.url_for('login'))
+
 @app.route('/arithmetic_board')
 def arithmetic_board():
     if 'logged_in' in flask.session and flask.session['logged_in']:

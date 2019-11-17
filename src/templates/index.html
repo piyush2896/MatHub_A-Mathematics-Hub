@@ -10,25 +10,31 @@
 
 {% block body %}
 <div class="row">
-    <div class="col-xs-6" id="separator-block">
+    <div class="img-responsive col-lg-6" id="separator-block">
+      <h1 class="mathub-h1 col-xs-8 col-xs-offset-3" id="textfields">Unlimited Practice</h1>
+      <h1 class="mathub-h1 col-xs-8 col-xs-offset-3" id="textfields">Mapped to Syllabus</h1>
+      <h1 class="mathub-h1 col-xs-8 col-xs-offset-3" id="textfields">Personalized Learning Journey</h1>
+    <!-- <img class="img-fluid" id="background_block" src="{{ url_for('static', filename='img/bg2.jpg')}}" alt="MatHub"> -->
+    <!-- <img id="background_block" src="{{ url_for('static', filename='img/bg2.jpg')}}" alt="MatHub"> -->
     </div>
 
-    <div class="col-xs-6" id="login-block">
+    <div class="col-lg-6" id="login-block">
         <div class="row">
-        <img class="img-responsive col-xs-6 col-xs-offset-3" src="{{ url_for('static', filename='img/logo.png')}}" alt="MatHub" style="margin-top: 10%">
+        <!-- <img class="img-responsive col-xs-6 col-xs-offset-3" src="{{ url_for('static', filename='img/logo.png')}}" alt="MatHub" style="margin-top: 10%"> -->
+        <img class="img-responsive col-xs-2 col-xs-offset-3" src="{{ url_for('static', filename='img/logo.png')}}" alt="MatHub" style="margin-top: 31%">
         </div>
         <div class="row">
-        <h1 class="mathub-h1 col-xs-8 col-xs-offset-2 text-center">Join MatHub today!</h1>
+        <h1 class="mathub-h1 col-xs-8 col-xs-offset-3">Join MatHub today!</h1>
         </div>
         <div class="row">
             <div class="col-xs-6 col-xs-offset-3">
-            <a href="{{ url_for('login') }}" class="btn btn-success btn-login-signup">LogIn</a>
+            <a href="{{ url_for('login') }}" class="btn btn-success btn-login-signup">Log in</a>
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-xs-6 col-xs-offset-3">
-            <a href="{{ url_for('admin_login') }}" class="btn btn-success btn-login-signup">Admin LogIn</a>
+            <a href="{{ url_for('admin_login') }}" class="btn btn-success btn-login-signup">Admin Log in</a>
             </div>
         </div>
     </div>

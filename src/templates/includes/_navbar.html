@@ -7,8 +7,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">
-                <img src="{{ url_for('static', filename='img/logo.png')}}" alt="MatHub" width='27px'>
+            <a class="navbar-brand" href="/" id="logo">
+                <img src="{{ url_for('static', filename='img/logo.png')}}" alt="MatHub" width='35px'>
             </a>
         </div>
 
@@ -17,15 +17,15 @@
             <ul class="nav navbar-nav">
                 <li><a href="{{ url_for('boards') }}">Boards <span class="sr-only">(current)</span></a></li>
                 {% if session.usertype == 'admin' %}
-                <li><a href="#">All Users</a></li>
+                <li><a href="{{ url_for('boards') }}">All Users</a></li>
                 <li><a href="{{ url_for('create_user') }}">Create New User</a></li>
                 {% endif %}
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" >
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Howdy, {{ session.client.name }} <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Profile</a></li>
+                    <ul class="dropdown-menu" id="right_drop">
+                        <li><a href="{{ url_for('profile') }}">Profile</a></li>
                         <li><a href="{{ url_for('logout') }}">Logout</a></li>
                     </ul>
                 </li>

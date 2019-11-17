@@ -1,3 +1,17 @@
 .navbar{
     border-radius: 0px;
 }
+
+#bs-example-navbar-collapse-1{
+  font-size: 1.7em;
+  /* margin-left: 50px; */
+  margin-top: 9px;
+}
+
+#right_drop{
+  font-size: 0.8em;
+}
+
+#logo{
+  margin-right: 50px;
+}
