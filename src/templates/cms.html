@@ -49,10 +49,11 @@
   <div class="wrapper">
       <h3>All users</h3>
       
-      <canvas id="myChart" width="1900" height="500"></canvas>
+      <canvas id="myChart" width="2100" height="500"></canvas>
 
   </div>
-
+  <button id="remove-btn" class="btn btn-primary col-xs-3 col-xs-offset-5 ">Remove user</button>
+  <button id="edit-btn" class="btn btn-primary col-xs-3 col-xs-offset-5 ">Edit user</button>
 {% block js %}
 <script src="{{ url_for('static', filename='js/cmspie.js') }}"></script>
 {% endblock %}
