@@ -62,7 +62,11 @@ def charts():
     if 'logged_in' in flask.session and flask.session['logged_in']:
         return flask.render_template('charts.html')
     return flask.redirect(flask.url_for('login'))
-
+@app.route('/cms')
+def cms():
+    if 'logged_in' in flask.session and flask.session['logged_in']:
+        return flask.render_template('cms.html')
+    return flask.redirect(flask.url_for('login'))
 
 @app.route('/arithmetic_board')
 def arithmetic_board():
