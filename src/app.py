@@ -55,9 +55,14 @@ def profile():
             username=flask.session['client']['username'],
             grade=flask.session['client']['grade'])
         if 'usertype' in flask.session and flask.session['usertype'] == actors.TEACHER:
-            return flask.render_template('teacherprofile.html')
+            return flask.render_template(
+            'teacherprofile.html', usertype=flask.session['usertype'],
+            username=flask.session['client']['username'])
+
         if 'usertype' in flask.session and flask.session['usertype'] == actors.PARENT:
-            return flask.render_template('parentprofile.html')
+                return flask.render_template(
+                'parentprofile.html', usertype=flask.session['usertype'],
+                username=flask.session['client']['username'])
     return flask.redirect(flask.url_for('login'))
 
 @app.route('/charts')
