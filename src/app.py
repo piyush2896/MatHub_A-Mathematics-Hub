@@ -50,7 +50,10 @@ def boards():
 def profile():
     if 'logged_in' in flask.session and flask.session['logged_in']:
         if 'usertype' in flask.session and flask.session['usertype'] == actors.STUDENT:
-            return flask.render_template('studprofile.html')
+            return flask.render_template(
+            'studprofile.html', usertype=flask.session['usertype'],
+            username=flask.session['client']['username'],
+            grade=flask.session['client']['grade'])
         if 'usertype' in flask.session and flask.session['usertype'] == actors.TEACHER:
             return flask.render_template('teacherprofile.html')
         if 'usertype' in flask.session and flask.session['usertype'] == actors.PARENT:
