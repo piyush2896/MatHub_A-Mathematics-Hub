@@ -18,7 +18,7 @@ var cell3 = row.insertCell(2);
 
 cell1.innerHTML = "2";
 cell2.innerHTML = "Assignment 2";
-cell3.innerHTML = "12/05/2019";
+cell3.innerHTML = "13/05/2019";
 
 
  });
