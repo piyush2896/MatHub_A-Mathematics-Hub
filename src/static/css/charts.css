@@ -1,17 +1,32 @@
-body {
-  font-family: Helvetica Neue, Arial, sans-serif;
-  text-align: center;
+@font-face {
+   font-family: myFirstFont;
+   src: url(../resources/USBI.ttf);
 }
+
+* {
+   font-family: myFirstFont;
+}
+
+html {
+overflow: hidden;
+}
+
+body {
+   background-color:#88ceb2;
+}
+
+h1
+{
+  text-align: center;
+  font-weight: 200;
+  font-size: 3em;
+  /* margin: 0 0 0.1em 0; */
+}
+
 
 .wrapper {
   max-width: 800px;
   margin: 50px auto;
-}
-
-h1 {
-  font-weight: 200;
-  font-size: 3em;
-  margin: 0 0 0.1em 0;
 }
 
 h2 {
