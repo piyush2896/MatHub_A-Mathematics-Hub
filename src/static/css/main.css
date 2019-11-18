@@ -61,10 +61,18 @@ body{
   .mathub-h1 {
     font-size: 3em;
   }
+
+  #logo{
+    width:30%;
+  }
 }
 
 @media only screen and (max-width: 391px){
   .mathub-h1 {
     font-size: 3em;
+  }
+
+  #logo{
+    width:30%;
   }
 }
