@@ -2,3 +2,47 @@
 {% block title %}
 <title>MatHub - CMS</title>
 {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cms.css')}}">
+{% endblock %}
+
+{% include 'includes/_navbar.html' %}
+
+{% block body %}
+<div class="row">
+<h1> User Management </h1>
+</div>
+<br>
+<div class="container">
+  <table id="myTable" class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">UserName</th>
+      <th scope="col">Type</th>
+      <th scope="col">Date created</th>
+    </tr>
+  </thead>
+
+</table>
+  </div>
+
+  <div class="row" id="buttons">
+  <button id="remove-btn" class="btn btn-primary col-xs-4 col-xs-offset-5 ">Remove user</button>
+  </div>
+  <br>
+  <div class="row" id="buttons">
+  <button id="edit-btn" class="btn btn-primary col-xs-4 col-xs-offset-5 ">Edit user</button>
+  </div>
+
+  <div class="row" id="piechart">
+      <canvas id="myChart" width="1050" height=auto ></canvas>
+  </div>
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/cms.js') }}"></script>
+<script src="{{ url_for('static', filename='js/cmspie.js') }}"></script>
+{% endblock %}
+
+{% endblock %}

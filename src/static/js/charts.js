@@ -1,26 +1,28 @@
-
-var student_no=[1,2,3,4,5,6,7,8,9,10]
+Chart.defaults.global.legend.display = false;
+var student_no=["S101","S102","S103","S104","S105"]
 //For drawing lines
-var grades = [100,95,43,56,70,23,45,6,90,18]
-
+var grades = [100,95,43,56,70]
 
 var ctx = document.getElementById("myChart");
+
 var myChart = new Chart(ctx, {
-  type: 'line',
+  type: 'bar',
   data: {
     labels: student_no,
-
+    display: false,
     datasets: [
-      { 
+      {
         data: grades,
-        borderColor: "blue",
-        backgroundColor:"#88ceb2",
-        pointBackgroundColor: "yellow",
+        borderColor: "white",
+        backgroundColor:"#213534",
+        pointBackgroundColor: "red",
         pointRadius: "6",
         fill: true,
-    
+
       }
     ]
 
   }
+  
+
 });

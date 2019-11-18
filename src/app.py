@@ -50,11 +50,26 @@ def boards():
 def profile():
     if 'logged_in' in flask.session and flask.session['logged_in']:
         if 'usertype' in flask.session and flask.session['usertype'] == actors.STUDENT:
-            return flask.render_template('studprofile.html')
+            return flask.render_template(
+            'studprofile.html', usertype=flask.session['usertype'],
+            username=flask.session['client']['username'],
+            grade=flask.session['client']['grade'])
         if 'usertype' in flask.session and flask.session['usertype'] == actors.TEACHER:
-            return flask.render_template('teacherprofile.html')
+            return flask.render_template(
+            'teacherprofile.html', usertype=flask.session['usertype'],
+            username=flask.session['client']['username'])
+
         if 'usertype' in flask.session and flask.session['usertype'] == actors.PARENT:
-            return flask.render_template('parentprofile.html')
+                return flask.render_template(
+                'parentprofile.html', usertype=flask.session['usertype'],
+                username=flask.session['client']['username'])
+    return flask.redirect(flask.url_for('login'))
+
+@app.route('/create_assignment')
+def create_assignment():
+    if 'logged_in' in flask.session and flask.session['logged_in']:
+        if 'usertype' in flask.session and flask.session['usertype'] == actors.TEACHER:
+            return flask.render_template('create_assignment.html')
     return flask.redirect(flask.url_for('login'))
 
 @app.route('/charts')
@@ -62,10 +77,12 @@ def charts():
     if 'logged_in' in flask.session and flask.session['logged_in']:
         return flask.render_template('charts.html')
     return flask.redirect(flask.url_for('login'))
+
 @app.route('/cms')
 def cms():
     if 'logged_in' in flask.session and flask.session['logged_in']:
-        return flask.render_template('cms.html')
+        if 'usertype' in flask.session and flask.session['usertype'] == actors.ADMIN:
+            return flask.render_template('cms.html')
     return flask.redirect(flask.url_for('login'))
 
 @app.route('/arithmetic_board')
@@ -120,7 +137,7 @@ def login():
             __login_count_incrementer(usertype, username)
 
             flask.session['client'] = data
-            flask.session['client']['login_count'] += 1 
+            flask.session['client']['login_count'] += 1
             if data['login_count'] == 1:
                 return flask.redirect(flask.url_for('reset_password'))
             return flask.redirect(flask.url_for('boards')) # TODO: Discuss
@@ -192,7 +209,7 @@ def create_user():
 
             fb_url = __get_url_from_usetype(usertype)
             fb_handler = fb_handle.FirebaseEntryPoint.create()
-            
+
             if data['id'] == None:
                 data['id'] += str(actors.START_ID)
                 fb_handler.set_id(fb_url, actors.START_ID)
@@ -203,7 +220,7 @@ def create_user():
             data['password'] = sha256_crypt.encrypt(password)
 
             actors.Admin.create_user(fb_url, data)
-            
+
             flask.flash('User Created with ID: {}'.format(data['id']), 'success')
         return flask.render_template('create_user.html')
     else:
@@ -245,7 +262,7 @@ def reset_password():
         if flask.request.method == 'POST':
             fb_url = __get_url_from_usetype(flask.session['usertype'])
             fb_handler = fb_handle.FirebaseEntryPoint.create()
-            
+
             client_data = flask.session['client']
             password = flask.request.form['password']
             confirm_password = flask.request.form['confirm-password']
@@ -255,7 +272,7 @@ def reset_password():
             password = sha256_crypt.encrypt(flask.request.form['password'])
             client_data['password'] = password
             flask.session['client'] = client_data
-            
+
             fb_handler.update_data(fb_url, client_data)
             return flask.redirect(flask.url_for('boards'))
         else:

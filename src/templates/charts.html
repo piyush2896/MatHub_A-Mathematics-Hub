@@ -1,4 +1,37 @@
-<!DOCTYPE html>
+{% extends "layout.html"%}
+{% block title %}
+<title>MatHub - Grade chart</title>
+{% endblock %}
+
+<!-- {% block js %}
+
+{% endblock %} -->
+
+{% block css %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/charts.css')}}">
+{% endblock %}
+
+{% include 'includes/_navbar.html' %}
+
+{% block body %}
+
+<div class="row">
+<h1> Grade chart </h1>
+</div>
+
+<div class="wrapper">
+
+  <h3>Student grades of Level 1</h3>
+  <canvas id="myChart" width="1600" height="900"></canvas>
+
+</div>
+
+<script src="../static/js/charts.js"></script>
+
+{% endblock %}
+
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <title>Grades</title>
@@ -9,11 +42,11 @@
   <body>
     <div class="wrapper">
       <h3>Student grades of Level 1</h3>
-      
+
       <canvas id="myChart" width="1600" height="900"></canvas>
 
     </div>
 
     <script src="../static/js/charts.js"></script>
   </body>
-</html>
+</html> -->

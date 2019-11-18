@@ -25,7 +25,8 @@ p.speech {
     /* line-height: 3em; */
     padding-top: 40px;
     vertical-align: middle;
-    background-color: #88ceb2;
+    /* background-color: #88ceb2; */
+    background-color: white;
     border: 8px solid #223539;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
@@ -47,6 +48,7 @@ p.speech:before {
     top: 190px;
     border: 25px solid;
     border-color: #223539 #223539 transparent transparent ;
+
 }
 
 p.speech:after {
@@ -57,7 +59,8 @@ p.speech:after {
     left: 308px;
     top: 184px;
     border: 15px solid;
-    border-color: #88ceb2 #88ceb2 transparent transparent;
+    /* border-color: #88ceb2 #88ceb2 transparent transparent; */
+    border-color: white white transparent transparent ;
 }
 
 .fab-btn-play {

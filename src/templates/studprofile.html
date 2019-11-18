@@ -7,8 +7,10 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/profile.css')}}">
 {% endblock %}
 
+{% include 'includes/_navbar.html' %}
+
 {% block body %}
-<h1> USER PROFILE </h1>
+<h1> Student Profile </h1>
 
 <div class="row dynamic-margin">
     <div class="col-xs-2 col-xs-offset-5">
@@ -16,65 +18,51 @@
     </div>
 </div>
 
-
-
 <div class="row">
-    <h2 class="col-xs-8 col-xs-offset-1" id="Email"> Email </h2>
+    <h2 class="col-xs-1 col-xs-offset-5" id="Email"> Email </h2>
+     <h2 id="email" class="col-xs-3 col-xs-offset-0"> {{username}} </h2>>
+</div>
+<div class="row">
+    <h2 class="col-xs-1 col-xs-offset-5" id="Grade"> Grade </h2>
+     <h2 id="class" class="col-xs-3 col-xs-offset-0"> {{grade}} </h2>
+</div>
+<div class="row">
+    <h2 class="col-xs-1 col-xs-offset-5" id="Teacher"> Teacher </h2>
+    <h2 id="Teacher" class="col-xs-3 col-xs-offset-0"> xyz </h2>
 </div>
 
 <div class="row">
-    <h2 class="col-xs-8 col-xs-offset-1" id="Teacher"> Teacher </h2>
+    <h2 class="col-xs-8 col-xs-offset-2" id="Upcomingassgn"> Upcoming Assignments </h2>
 </div>
 
-<div class="row">
-    <a href="{{ url_for('charts') }}" class="btn btn-default btn-board col-xs-offset-4 col-xs-4">Grade Graph</a>
-</div>
-
-
-<div class="row">
-    <h2 class="col-xs-8 col-xs-offset-1" id="Upcomingassgn"> Upcoming Assignments </h2>
-</div>
 <div class="container">
-  <table class="table table-striped">
+  <table class="table table-striped" id="AssignmentTable">
   <thead>
     <tr>
       <th scope="col">No</th>
       <th scope="col">Assignment</th>
       <th scope="col">Due Date</th>
-      
+
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      
-      <td>Assignment 1</td>
-      <td>11/11</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      
-      <td>Assignment 2</td>
-      <td>15/11</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      
-      <td>Assignment 3</td>
-      <td>17/11</td>
-    </tr>
-  </tbody>
+
 </table>
   </div>
 
-
-<div class="container">
+  <div class="row" id="buttons">
+      <a href="{{ url_for('charts') }}" class="btn btn-default btn-board col-xs-offset-4 col-xs-2" id="graph-btn">Grade Graph</a>
+  </div>
+<!-- <div class="container">
   <h2>Assignment Progress bar</h2>
   <div class="progress">
     <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
       <span class="sr-only">70% Complete</span>
     </div>
   </div>
-</div>
+</div> -->
+{% block js %}
+<script src="{{ url_for('static', filename='js/studentprofile.js') }}"></script>
+{% endblock %}
+
 
 {% endblock %}

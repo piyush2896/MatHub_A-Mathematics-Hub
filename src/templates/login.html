@@ -10,14 +10,14 @@
 
 {% block body %}
 <div class="row" style="margin-top: 5%">
-    <img class="col-xs-1 col-xs-offset-3 img-responsive text-center" src="{{ url_for('static', filename='img/logo.png')}}" alt="MatHub" >
+    <img class="col-xs-1 col-xs-offset-3 img-responsive text-center" src="{{ url_for('static', filename='img/logo.png')}}" id="logo" alt="MatHub" >
 </div>
 
 <div class="row">
     {% if login_type != 'admin' %}
-    <h2 class="col-xs-6 col-xs-offset-3 log-head" id="LoginToMathub"> Log in to MatHub</h2>
+    <h1 class="col-xs-6 col-xs-offset-3 log-head" id="LoginToMathub"> Log in to MatHub</h1>
     {% else %}
-    <h2 class="col-xs-6 col-xs-offset-3 log-head"> Admin Log in</h2>
+    <h1 class="col-xs-6 col-xs-offset-3 log-head" id="AdminLogin"> Admin Log in</h1>
     {% endif %}
 </div>
 
@@ -30,7 +30,7 @@
         {% endif %}
         {% include 'includes/_messages.html' %}
             {% if login_type != 'admin' %}
-            <div class="form-group col-xs-4 col-xs-offset-3 text-center radios">
+            <div class="form-group col-xs-8 col-xs-offset-2 text-center radios" id="radio_div">
                 <div class="radio">
                     <label>
                         <input type="radio" name="optionRadios" id="student-radio" value="student" checked> Student
@@ -56,7 +56,7 @@
                 <label for="pwd">Password:</label>
                 <input type="password" class="form-control" id="pwd"  name="pwd">
             </div>
-            <button type="submit" id="login-btn" class="btn btn-primary col-xs-5 col-xs-offset-1">Log in</button>
+            <button type="submit" id="login-btn" class="btn btn-primary col-xs-5" >Log in</button>
         </form>
     </div>
 </div>
@@ -69,8 +69,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-3 col-xs-offset-3">
-            <a href='/admin-login' type="button" id="singup-btn" class="btn btn-primary">Admin LogIn</a>
+        <div class="col-xs-4 col-xs-offset-3">
+            <a href='/admin-login' type="button" id="admin-login-btn" class="btn btn-primary">Admin Log in</a>
         </div>
     </div>
 </div>

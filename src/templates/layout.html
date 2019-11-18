@@ -7,10 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta id="apiURL" data-url="http://127.0.0.1:5000/eval">
+    <link rel="icon"
+      type="image/ico"
+      href="{{ url_for('static', filename='img/favicon.ico')}}">
 
     {% block meta%}
     {% endblock %}
-    
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css')}}">
@@ -21,7 +24,7 @@
     <div class="container-fluid">
         {% block body %} {% endblock %}
     </div>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
