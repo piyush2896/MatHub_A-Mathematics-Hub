@@ -1,28 +1,19 @@
-
-var student_no=["Student","Teacher","Parent"]
-//For drawing lines
-var grades = [5,6,6]
-
-
-var ctx = document.getElementById("myChart");
-
-var myChart = new Chart(ctx, {
-  type: 'pie',
-  data: {
-    labels: student_no,
-
-    datasets: [
-      { 
-        data: grades,
-        borderColor: "blue",
-        backgroundColor:"white",
-        pointBackgroundColor: "yellow",
-        pointRadius: "6",
-        fill: true,
-    
-      }
-    ]
-
-  }
+ctx = document.getElementById('myChart').getContext('2d');
+chart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        datasets: [{
+            label: 'Colors',
+            data: [9, 8, 7],
+            backgroundColor: ["#277070","#03fc90","#063629"]
+        }],
+        labels: ['Student','Teacher','Parent']
+    },
+    options: {
+        responsive: true,
+        title:{
+            display: true,
+           
+        }
+    }
 });
-
