@@ -6,10 +6,42 @@
    font-family: myFirstFont;
 }
 
+h1{
+  text-align: center;
+}
+
+#myTable{
+  color: black;
+}
+
 
 html {
 overflow: hidden;
 }
+
+#remove-btn{
+  font-size: 1.3em;
+  width:20%;
+  background-color: #213534;
+  /* color: #213534;   */
+}
+
+#edit-btn{
+  font-size: 1.3em;
+  width:20%;
+  background-color: #213534;
+}
+
+#buttons{
+  text-align: center;
+
+}
+
+#piechart{
+  padding-top: 7%;
+  text-align: center;
+}
+
 body {
    background-color:#88ceb2;
 }
