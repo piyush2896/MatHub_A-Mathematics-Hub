@@ -30,7 +30,7 @@
         {% endif %}
         {% include 'includes/_messages.html' %}
             {% if login_type != 'admin' %}
-            <div class="form-group col-xs-6 col-xs-offset-3 text-center radios">
+            <div class="form-group col-xs-8 col-xs-offset-2 text-center radios" id="radio_div">
                 <div class="radio">
                     <label>
                         <input type="radio" name="optionRadios" id="student-radio" value="student" checked> Student
@@ -56,7 +56,7 @@
                 <label for="pwd">Password:</label>
                 <input type="password" class="form-control" id="pwd"  name="pwd">
             </div>
-            <button type="submit" id="login-btn" class="btn btn-primary col-xs-5 col-xs-offset-1">Log in</button>
+            <button type="submit" id="login-btn" class="btn btn-primary col-xs-5" >Log in</button>
         </form>
     </div>
 </div>

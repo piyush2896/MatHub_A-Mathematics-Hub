@@ -14,9 +14,14 @@ body {
 #login-btn {
    background-color:#213334;
    text-align:center;
+   margin-left: 30%;
    margin-bottom: 3%;
-   margin-left: 10%;
+   /* margin-left: 10%; */
    font-size: 2.2em;
+}
+
+.form-control{
+  font-size: 1em;
 }
 
 #singup-btn {
@@ -26,7 +31,7 @@ body {
 #form {
    border: 3px solid;
    box-shadow: 5px 5px 5px #213334;
-   font-size: 1.7em;
+   font-size: 2em;
 }
 
 .email {
@@ -45,8 +50,9 @@ body {
 .radios{
    margin-top: 1%;
    font-size: 0.75em;
-   font-size: 1em;
+   /* font-size: 1em; */
 }
+
 
 .radio {
    display: inline;
