@@ -1,5 +1,5 @@
 function studentDataForm(){
-    element = "<div class='row'><div class='form-group col-xs-6 col-xs-offset-3'>\
+    element = "<div class='row'><div class='form-group col-xs-5 col-xs-offset-4'>\
         <label for='grade'>Grade</label>\
         <select id='grade' class='form-control' name='grade'>";
     for(i = 1; i <= 12; i++){
@@ -10,7 +10,7 @@ function studentDataForm(){
 }
 
 function parentDataForm(){
-    element = "<div class='row'><div class='form-group col-xs-6 col-xs-offset-3'>\
+    element = "<div class='row'><div class='form-group col-xs-5 col-xs-offset-4'>\
         <label for='stud-id'>Student ID</label>\
         <input type='text' class='form-control' id='stud-id' name='stud-id' placeholder='Student ID'>";
     element += "</div></div>";
@@ -18,7 +18,7 @@ function parentDataForm(){
 }
 
 function teacherDataForm(){
-    element = "<div class='row'><div class='form-group col-xs-6 col-xs-offset-3'>\
+    element = "<div class='row'><div class='form-group col-xs-5 col-xs-offset-4'>\
         <label for='grade'>Grade</label>\
         <select id='grade' class='form-control' multiple>";
     for(i = 1; i <= 12; i++){
@@ -28,8 +28,8 @@ function teacherDataForm(){
     return element;
 }
 
-$(document).ready(function(){    
-    
+$(document).ready(function(){
+
     function updateExtraData(data){
         $('#extra-details').html('');
         $('#extra-details').html(data);
