@@ -15,7 +15,7 @@
 
 <div class="row">
     {% if login_type != 'admin' %}
-    <h2 class="col-xs-6 col-xs-offset-3 log-head" id="LoginToMathub"> Log in to MatHub</h2>
+    <h1 class="col-xs-6 col-xs-offset-3 log-head" id="LoginToMathub"> Log in to MatHub</h1>
     {% else %}
     <h2 class="col-xs-6 col-xs-offset-3 log-head"> Admin Log in</h2>
     {% endif %}
@@ -30,7 +30,7 @@
         {% endif %}
         {% include 'includes/_messages.html' %}
             {% if login_type != 'admin' %}
-            <div class="form-group col-xs-4 col-xs-offset-3 text-center radios">
+            <div class="form-group col-xs-6 col-xs-offset-3 text-center radios">
                 <div class="radio">
                     <label>
                         <input type="radio" name="optionRadios" id="student-radio" value="student" checked> Student
