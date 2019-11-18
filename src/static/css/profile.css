@@ -31,3 +31,9 @@ h1
 {
   text-align: center;
 }
+
+@media only screen and (max-width: 470px){
+.btnboard{
+  width: 450%;
+}
+   }

@@ -85,3 +85,13 @@ left:40%;
    margin-left: 22%;
   }
 }
+
+@media only screen and (max-width: 520px){
+    #create-user-btn, #reset-btn {
+      font-size: 0.8em;
+    }
+
+    #usertype{
+      font-size: 0.5em;
+    }
+}

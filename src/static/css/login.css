@@ -19,6 +19,8 @@ body {
    margin-bottom: 3%;
    /* margin-left: 10%; */
    font-size: 2.2em;
+   /* width: 40%; */
+   height: 10%;
 }
 
 .form-control{
@@ -27,8 +29,8 @@ body {
 
 #admin-login-btn {
    background-color:#213334;
-   width: 30%;
-   height: 30%;
+   width: 50%;
+   height: 50%;
    font-size: 1em;
 }
 
@@ -69,10 +71,10 @@ body {
    }
 
    #form {
-      font-size: 1.2em;
+      font-size: 4em;
       height: 50%;
       width: auto;
-      margin-left: 25px;
+      margin-left: 10%;
    }
 
    .signup{
@@ -81,6 +83,15 @@ body {
 
    #LoginToMathub{
      font-size: 2em;
+   }
+
+   .radio{
+     font-size: 1.5em;
+   }
+
+   #admin-login-btn{
+     width: 140%;
+     height: auto;
    }
 }
 
@@ -107,7 +118,16 @@ body {
      font-size: 1.2em;
      height: 50%;
      width: auto;
-     margin-right: 45px;
+     margin-right: 13%;
+  }
+
+  .radio{
+    font-size: 1.5em;
+  }
+
+  #admin-login-btn{
+    width: 140%;
+    height: auto;
   }
 }
 
