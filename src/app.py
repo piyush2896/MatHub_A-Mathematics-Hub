@@ -65,11 +65,19 @@ def profile():
                 username=flask.session['client']['username'])
     return flask.redirect(flask.url_for('login'))
 
+@app.route('/create_assignment')
+def create_assignment():
+    if 'logged_in' in flask.session and flask.session['logged_in']:
+        if 'usertype' in flask.session and flask.session['usertype'] == actors.TEACHER:
+            return flask.render_template('create_assignment.html')
+    return flask.redirect(flask.url_for('login'))
+
 @app.route('/charts')
 def charts():
     if 'logged_in' in flask.session and flask.session['logged_in']:
         return flask.render_template('charts.html')
     return flask.redirect(flask.url_for('login'))
+
 @app.route('/cms')
 def cms():
     if 'logged_in' in flask.session and flask.session['logged_in']:
