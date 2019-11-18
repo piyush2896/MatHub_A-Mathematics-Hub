@@ -12,17 +12,16 @@ var myChart = new Chart(ctx, {
     labels: student_no,
 
     datasets: [
-      { 
+      {
         data: grades,
-        borderColor: "blue",
-        backgroundColor:"#88ceb2",
-        pointBackgroundColor: "yellow",
+        borderColor: "white",
+        backgroundColor:"#213534",
+        pointBackgroundColor: "red",
         pointRadius: "6",
         fill: true,
-    
+
       }
     ]
 
   }
 });
-
