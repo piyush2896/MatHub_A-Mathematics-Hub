@@ -10,7 +10,7 @@
 {% include 'includes/_navbar.html' %}
 
 {% block body %}
-<h1> USER PROFILE </h1>
+<h1> Student Profile </h1>
 
 <div class="row dynamic-margin">
     <div class="col-xs-2 col-xs-offset-5">
@@ -19,25 +19,22 @@
 </div>
 
 <div class="row">
-    <h2 class="col-xs-3 col-xs-offset-1" id="Email"> Email </h2>
-     <h3 id="email" class="col-xs-3 col-xs-offset-0" id="Email"> {{username}} </h3>
+    <h2 class="col-xs-1 col-xs-offset-5" id="Email"> Email </h2>
+     <h2 id="email" class="col-xs-3 col-xs-offset-0"> {{username}} </h2>>
 </div>
 <div class="row">
-    <h2 class="col-xs-3 col-xs-offset-1" id="Grade"> Grade </h2>
-     <h3 id="email" class="col-xs-3 col-xs-offset-0" id="Email"> {{grade}} </h3>
+    <h2 class="col-xs-1 col-xs-offset-5" id="Grade"> Grade </h2>
+     <h2 id="class" class="col-xs-3 col-xs-offset-0"> {{grade}} </h2>
 </div>
 <div class="row">
-    <h2 class="col-xs-3 col-xs-offset-1" id="Teacher"> Teacher </h2>
+    <h2 class="col-xs-1 col-xs-offset-5" id="Teacher"> Teacher </h2>
+    <h2 id="Teacher" class="col-xs-3 col-xs-offset-0"> xyz </h2>
 </div>
 
 <div class="row">
-    <a href="{{ url_for('charts') }}" class="btn btn-default btn-board col-xs-offset-4 col-xs-4">Grade Graph</a>
+    <h2 class="col-xs-8 col-xs-offset-2" id="Upcomingassgn"> Upcoming Assignments </h2>
 </div>
 
-
-<div class="row">
-    <h2 class="col-xs-8 col-xs-offset-1" id="Upcomingassgn"> Upcoming Assignments </h2>
-</div>
 <div class="container">
   <table class="table table-striped">
   <thead>
@@ -71,7 +68,9 @@
 </table>
   </div>
 
-
+  <div class="row" id="buttons">
+      <a href="{{ url_for('charts') }}" class="btn btn-default btn-board col-xs-offset-4 col-xs-2" id="graph-btn">Grade Graph</a>
+  </div>
 <!-- <div class="container">
   <h2>Assignment Progress bar</h2>
   <div class="progress">
