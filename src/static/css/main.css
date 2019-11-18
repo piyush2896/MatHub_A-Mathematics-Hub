@@ -8,6 +8,10 @@
    font-family: myFirstFont;
 }
 
+body{
+    overflow: auto;
+}
+
 .container-fluid {
   height: 100%;
 }

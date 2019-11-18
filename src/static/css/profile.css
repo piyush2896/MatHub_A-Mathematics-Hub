@@ -8,11 +8,8 @@
 }
 
 
-html {
-overflow: hidden;
-}
-
 body {
+  overflow: auto;
    background-color:#88ceb2;
 }
 

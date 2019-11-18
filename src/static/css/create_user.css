@@ -9,7 +9,8 @@
 
 body
 {
-background-color:#88ceb2;
+    overflow: auto;
+    background-color:#88ceb2;
 }
 
 h2{
