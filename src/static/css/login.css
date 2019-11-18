@@ -65,11 +65,14 @@ body {
 
 @media only screen and (max-width: 470px){
    .log-head{
-      font-size: 1em;
+      font-size: 2em;
    }
 
    #form {
       font-size: 1.2em;
+      height: 50%;
+      width: auto;
+      margin-left: 25px;
    }
 
    .signup{
@@ -89,4 +92,31 @@ body {
    #login-btn {
       font-size: 0.7em;
    }
+}
+
+@media only screen and (max-width: 968px){
+  #logo{
+    width:20%;
+  }
+
+  #admin_login{
+      font-size: 2em;
+  }
+
+  #form {
+     font-size: 1.2em;
+     height: 50%;
+     width: auto;
+     margin-right: 45px;
+  }
+}
+
+@media only screen and (max-width: 376px){
+  #logo{
+    width:25%;
+  }
+
+  #admin_login{
+      font-size: 10em;
+  }
 }

@@ -10,14 +10,14 @@
 
 {% block body %}
 <div class="row" style="margin-top: 5%">
-    <img class="col-xs-1 col-xs-offset-3 img-responsive text-center" src="{{ url_for('static', filename='img/logo.png')}}" alt="MatHub" >
+    <img class="col-xs-1 col-xs-offset-3 img-responsive text-center" src="{{ url_for('static', filename='img/logo.png')}}" id="logo" alt="MatHub" >
 </div>
 
 <div class="row">
     {% if login_type != 'admin' %}
     <h1 class="col-xs-6 col-xs-offset-3 log-head" id="LoginToMathub"> Log in to MatHub</h1>
     {% else %}
-    <h2 class="col-xs-6 col-xs-offset-3 log-head"> Admin Log in</h2>
+    <h1 class="col-xs-6 col-xs-offset-3 log-head" id="AdminLogin"> Admin Log in</h1>
     {% endif %}
 </div>
 
