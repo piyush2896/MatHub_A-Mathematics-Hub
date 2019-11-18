@@ -24,8 +24,11 @@ body {
   font-size: 1em;
 }
 
-#singup-btn {
+#admin-login-btn {
    background-color:#213334;
+   width: 30%;
+   height: 30%;
+   font-size: 1em;
 }
 
 #form {
