@@ -181,7 +181,8 @@ def create_user():
                 data['grade'] = flask.request.form['grade']
                 data['id'] = '{}'.format(actors.STUDENT_ID_PREFIX)
             elif usertype == actors.TEACHER:
-                data['grades'] = flask.request.form['grades']
+                data['grades'] = flask.request.form.getlist('grades')
+                print('HERE!!')
                 data['id'] = '{}'.format(actors.TEACHER_ID_PREFIX)
             elif usertype == actors.PARENT:
                 data['stud_id'] = flask.request.form['stud-id']
