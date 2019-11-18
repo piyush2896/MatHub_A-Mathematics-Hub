@@ -26,14 +26,22 @@ left:47%;
   /* margin-left: 1%; */
 }
 
-#form1{
-    font-size: 1.7em;
+#form{
+    font-size: 1.3em;
 }
 
 #logo{
   max-width:5%;
   height:auto;
   margin-left: 36%;
+}
+
+.form-control{
+    font-size: 1.3em;
+}
+
+#usertype{
+  font-size: 0.8em;
 }
 
 /* #a{
@@ -49,7 +57,7 @@ left:40%;
    background-color:#213334;
    text-align:center;
    margin-bottom: 1.5%;
-   font-size: 1.5em;
+   font-size: 1em;
 }
 
 @media only screen and (max-width: 870px){
