@@ -7,6 +7,8 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/profile.css')}}">
 {% endblock %}
 
+{% include 'includes/_navbar.html' %}
+
 {% block body %}
 <h1> USER PROFILE </h1>
 
@@ -43,25 +45,25 @@
       <th scope="col">No</th>
       <th scope="col">Assignment</th>
       <th scope="col">Due Date</th>
-      
+
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      
+
       <td>Assignment 1</td>
       <td>11/11</td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      
+
       <td>Assignment 2</td>
       <td>15/11</td>
     </tr>
     <tr>
       <th scope="row">3</th>
-      
+
       <td>Assignment 3</td>
       <td>17/11</td>
     </tr>
