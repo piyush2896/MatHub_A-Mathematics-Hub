@@ -25,7 +25,14 @@ body {
   padding-top: 3%;
 }
 
-#graph-btn, #create-ass-btn{
+#graph-btn{
+  background-color: #213534;
+  color: white;
+  font-size: 1.5em;
+  margin-top: 3%;
+}
+
+#create-ass-btn{
   background-color: #213534;
   color: white;
   font-size: 1.5em;
