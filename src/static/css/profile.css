@@ -21,6 +21,10 @@ body {
     margin-left: 13%;
 }
 
+#table_div{
+  padding-top: 3%;
+}
+
 #graph-btn, #create-ass-btn{
   background-color: #213534;
   color: white;
