@@ -11,24 +11,27 @@
 
 {% block body %}
 <h1> Student Profile </h1>
-<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23009688&amp;ctz=America%2FPhoenix&amp;src=ajVwZmdxNHNiODN2bTkxZ3Noczc3dTJ2ZDhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23871111" style="border-width:0" width="500" height="500" frameborder="0" scrolling="no"></iframe>
-<div class="row dynamic-margin">
-    <div class="col-xs-2 col-xs-offset-5">
-        <img class="img-responsive" src="{{ url_for('static', filename='img/studentprofile.png') }}" alt="MatHub">
-    </div>
-</div>
 
-<div class="row">
-    <h2 class="col-xs-1 col-xs-offset-5" id="Email"> Email </h2>
-     <h2 id="email" class="col-xs-3 col-xs-offset-0"> {{username}} </h2>>
-</div>
-<div class="row">
-    <h2 class="col-xs-1 col-xs-offset-5" id="Grade"> Grade </h2>
-     <h2 id="class" class="col-xs-3 col-xs-offset-0"> {{grade}} </h2>
-</div>
-<div class="row">
-    <h2 class="col-xs-1 col-xs-offset-5" id="Teacher"> Teacher </h2>
-    <h2 id="Teacher" class="col-xs-3 col-xs-offset-0"> xyz </h2>
+<div class="row dynamic-margin">
+    <div class="col-xs-2 col-xs-offset-2">
+        <img class="img-responsive" src="{{ url_for('static', filename='img/studentprofile.png') }}" alt="StudentProfile">
+        <div class="row">
+            <h2 class="col-xs-1 col-xs-offset-0" id="Email"> Email </h2>
+             <h2 id="email" class="col-xs-3 col-xs-offset-4"> {{username}} </h2>
+        </div>
+        <div class="row">
+            <h2 class="col-xs-1 col-xs-offset-0" id="Grade"> Grade </h2>
+             <h2 id="class" class="col-xs-3 col-xs-offset-4"> {{grade}} </h2>
+        </div>
+        <div class="row">
+            <h2 class="col-xs-1 col-xs-offset-0" id="Grade"> Teacher </h2>
+             <h2 id="class" class="col-xs-3 col-xs-offset-4"> xyz </h2>
+        </div>
+    </div>
+
+    <div class="col-xs-2 col-xs-offset-3">
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23009688&amp;ctz=America%2FPhoenix&amp;src=ajVwZmdxNHNiODN2bTkxZ3Noczc3dTJ2ZDhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23871111" style="border-width:0" width="500" height="500" frameborder="0" scrolling="no"></iframe>
+    </div>
 </div>
 
 <div class="row">
