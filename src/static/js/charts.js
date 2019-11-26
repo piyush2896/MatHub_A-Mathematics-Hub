@@ -1,6 +1,6 @@
 Chart.defaults.global.legend.display = false;
 var student_no=["S101","S102","S103","S104","S105"]
-//For drawing lines
+
 var grades = [100,95,43,56,70]
 
 var ctx = document.getElementById("myChart");
