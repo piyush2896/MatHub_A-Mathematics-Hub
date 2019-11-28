@@ -1,0 +1,14 @@
+@font-face {
+   font-family: myFirstFont;
+   src: url(../resources/USBI.ttf);
+}
+
+* {
+   font-family: myFirstFont;
+}
+
+
+body {
+  overflow: auto;
+   background-color:#88ceb2;
+}
