@@ -3,6 +3,9 @@
 <title>MatHub - Assignment</title>
 {% endblock %}
 
+{% block js %}
+<script src="{{ url_for('static', filename='js/teacherprofile.js') }}"></script>
+{% endblock %}
 
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/assignment.css')}}">
