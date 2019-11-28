@@ -43,10 +43,10 @@
      <h2 id="class" class="col-xs-3 col-xs-offset-0"> xyz </h2>
 </div> -->
 
-<div class="container" id="table_div">
+<!-- <div class="container" id="table_div">
   <table class="table table-striped" id="AssignmentTable">
   <!-- <table class="table table-striped"> -->
-  <thead>
+  <!-- <thead>
     <tr>
       <th scope="col">No</th>
       <th scope="col">Assignment</th>
@@ -55,7 +55,7 @@
     </tr>
   </thead>
 </table>
-  </div>
+</div> --> -->
 <!-- <div class="container">
   <h2>Progress Bar</h2>
   <div class="progress">
@@ -69,7 +69,9 @@
 <a href="{{ url_for('create_assignment') }}" id="create-ass-btn" class="btn btn-default btn-board col-xs-offset-4 col-xs-2">Create Assignment</a>
 </div>
 
-<br>
+<div class="row" id="buttons">
+<a href="{{ url_for('view_assignment') }}" id="view-ass-btn" class="btn btn-default btn-board col-xs-offset-4 col-xs-2">View Assignment</a>
+</div>
 
 <div class="row" id="buttons">
     <a href="{{ url_for('charts') }}" id="graph-btn" class="btn btn-default btn-board col-xs-offset-4 col-xs-2">Grade Graph</a>
