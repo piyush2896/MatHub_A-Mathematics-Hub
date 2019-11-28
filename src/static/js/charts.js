@@ -29,3 +29,28 @@ var myChart = new Chart(ctx, {
   
 
 });
+
+
+var assgn_no = ["A1","A2","A3"]
+var completion = [90,23,70]
+var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: student_no,
+    display: false,
+    datasets: [
+      {
+        data: grades,
+        borderColor: "white",
+        backgroundColor:"#213534",
+        pointBackgroundColor: "red",
+        pointRadius: "6",
+        fill: true,
+
+      }
+    ]
+
+  }
+  
+
+});
