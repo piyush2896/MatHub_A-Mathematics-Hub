@@ -3,7 +3,7 @@ var completion = [90,23,70]
 var ctx = document.getElementById("myChart");
 
 var myChart = new Chart(ctx, {
-  type: 'pie',
+  type: 'doughnut',
   data: {
     labels: assgn_no,
     display: false,
