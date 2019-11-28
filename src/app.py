@@ -79,6 +79,13 @@ def view_assignment():
             return flask.render_template('teacher_assignment.html')
     return flask.redirect(flask.url_for('login'))
 
+@app.route('/student_view_assgn')
+def student_view_assgn():
+    if 'logged_in' in flask.session and flask.session['logged_in']:
+        if 'usertype' in flask.session and flask.session['usertype'] == actors.STUDENT:
+            return flask.render_template('studassignment.html')
+    return flask.redirect(flask.url_for('login'))
+
 @app.route('/charts')
 def charts():
     if 'logged_in' in flask.session and flask.session['logged_in']:
