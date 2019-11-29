@@ -1,3 +1,6 @@
+/*Author - Sandya Manoharan
+Date Modified - 11/25/19 */
+
 @font-face {
    font-family: myFirstFont;
    src: url(../resources/USBI.ttf);
@@ -17,7 +20,7 @@ h1
   text-align: center;
   font-weight: 200;
   font-size: 3em;
-  /* margin: 0 0 0.1em 0; */
+  
 }
 
 
@@ -29,12 +32,6 @@ h1
 h2 {
   font-weight: 200;
   font-size: 0.9em;
-  /* margin: 0 0 50px; */
   color: #999;
 }
 
-/* a {
-  margin-top: 50px;
-  display: block;
-  color: #3e95cd;
-} */

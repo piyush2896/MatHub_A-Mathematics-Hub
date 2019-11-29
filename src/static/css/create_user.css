@@ -31,6 +31,10 @@ left:47%;
     font-size: 1.3em;
 }
 
+#extra-details{
+    font-size: 0.6em;
+}
+
 #logo{
   max-width:5%;
   height:auto;

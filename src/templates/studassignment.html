@@ -1,0 +1,53 @@
+{% extends "layout.html"%}
+{% block title %}
+<title>MatHub - Student Assignment</title>
+{% endblock %}
+
+{% include 'includes/_navbar.html' %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/studentprofile.js') }}"></script>
+{% endblock %}
+
+{% block css %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/assignment.css')}}">
+{% endblock %}
+
+
+
+{% block body %}
+
+
+<div class="row">
+    <h2 class="col-xs-8 col-xs-offset-2" id="Upcomingassgn"> Upcoming Assignments </h2>
+</div>
+
+<div class="container">
+  <table class="table table-striped" id="AssignmentTable">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Assignment</th>
+      <th scope="col">Due Date</th>
+
+    </tr>
+  </thead>
+
+</table>
+  </div>
+
+ <div class="row">
+<h1> Grade chart </h1>
+</div>
+
+<div class="wrapper">
+
+  <h3>Student grades of Level 1</h3>
+  <canvas id="myChart" width="2800" height="900"></canvas>
+
+</div>
+
+<script src="../static/js/dough.js"></script>
+
+{% endblock %}
