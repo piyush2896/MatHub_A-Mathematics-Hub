@@ -1,8 +1,13 @@
+/*
+Author: Amudhan Manisekaran
+Date modified: 11/3/2019
+*/
+
 font-face {
     font-family: myFirstFont;
     src: url(/static/resources/USBI.ttf);
  }
- 
+
  * {
     font-family: myFirstFont;
  }

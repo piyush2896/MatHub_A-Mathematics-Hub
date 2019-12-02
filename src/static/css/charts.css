@@ -1,5 +1,7 @@
-/*Author - Sandya Manoharan
-Date Modified - 11/25/19 */
+/*
+Author: Sandya Manoharan
+Date modified: 11/25/2019
+*/
 
 @font-face {
    font-family: myFirstFont;
@@ -20,7 +22,7 @@ h1
   text-align: center;
   font-weight: 200;
   font-size: 3em;
-  
+
 }
 
 
@@ -34,4 +36,3 @@ h2 {
   font-size: 0.9em;
   color: #999;
 }
-
