@@ -1,3 +1,8 @@
+/*
+Author: Piyush Malhotra
+Date modified: 11/13/2019
+*/
+
 $(document).ready(function () {
     $('body').attr("mode", "maker");
     Blockly.inject('blockly-div', {

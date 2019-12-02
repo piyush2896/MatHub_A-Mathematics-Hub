@@ -1,3 +1,8 @@
+/*
+Author: Sandya Manoharan
+Date modified: 11/28/2019
+*/
+
 var assgn_no = ["A1","A2","A3"]
 var completion = [90,23,70]
 var ctx = document.getElementById("myChart");
@@ -20,6 +25,6 @@ var myChart = new Chart(ctx, {
     ]
 
   }
-  
+
 
 });

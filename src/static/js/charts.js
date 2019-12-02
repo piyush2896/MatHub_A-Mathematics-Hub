@@ -1,5 +1,7 @@
-// Author - Sandya Manoharan
-// Date Modified - 11/25/19
+/*
+Author: Sandya Manoharan
+Date modified: 11/28/2019
+*/
 
 Chart.defaults.global.legend.display = false;
 var student_no=["S101","S102","S103","S104","S105"]
@@ -27,9 +29,6 @@ var myChart = new Chart(ctx, {
     ]
 
   }
-  
+
 
 });
-
-
-

@@ -1,3 +1,8 @@
+/*
+Author: Piyush Malhotra
+Date modified: 11/17/2019
+*/
+
 function studentDataForm(){
     element = "<div class='row'><div class='form-group col-xs-5 col-xs-offset-4'>\
         <label for='grade'>Grade</label>\

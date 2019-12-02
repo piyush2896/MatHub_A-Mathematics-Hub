@@ -1,3 +1,8 @@
+/*
+Author: Sandya Manoharan
+Date modified: 11/18/2019
+*/
+
 ctx = document.getElementById('myChart').getContext('2d');
 chart = new Chart(ctx, {
     type: 'pie',
@@ -13,7 +18,7 @@ chart = new Chart(ctx, {
         responsive: true,
         title:{
             display: true,
-           
+
         }
     }
 });

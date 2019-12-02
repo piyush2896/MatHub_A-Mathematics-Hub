@@ -1,3 +1,7 @@
+/*
+Author: Sandya Manoharan
+Date modified: 11/17/2019
+*/
 
 $(document).ready(function () {
 console.log("Inside func");
