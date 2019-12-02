@@ -1,3 +1,8 @@
+/*
+Author: Amudhan Manisekaran
+Date modified: 11/18/2019
+*/
+
 $(document).ready(function () {
 console.log("Inside func");
   var table = document.getElementById("AssignmentTable");

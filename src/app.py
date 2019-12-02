@@ -1,3 +1,6 @@
+# Author: Piyush Malhotra
+# Date modified: 11/28/2019
+
 import flask
 from passlib.hash import sha256_crypt
 
