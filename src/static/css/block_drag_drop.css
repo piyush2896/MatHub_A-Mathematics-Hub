@@ -1,3 +1,17 @@
+/*
+Author: Piyush Malhotra
+Date modified: 11/17/2019
+*/
+
+@font-face {
+   font-family: myFirstFont;
+   src: url(../resources/USBI.ttf);
+}
+
+* {
+   font-family: myFirstFont;
+}
+
 .navbar {
     margin-bottom: 0;
 }
@@ -10,13 +24,14 @@
 /* Src: https://www.sitepoint.com/pure-css3-speech-bubbles/ */
 p.speech {
     position: relative;
-    width: 200px;
-    height: 100px;
+    width: 400px;
+    height: 200px;
     text-align: center;
     /* line-height: 3em; */
-    padding-top: 10px;
+    padding-top: 40px;
     vertical-align: middle;
-    background-color: #fff;
+    /* background-color: #88ceb2; */
+    background-color: white;
     border: 8px solid #223539;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
@@ -26,6 +41,7 @@ p.speech {
     box-shadow: 2px 2px 4px #223539;
     margin-top:1%;
     word-wrap: break-word;
+    font-size: 2em;
 }
 
 p.speech:before {
@@ -33,10 +49,11 @@ p.speech:before {
     position: absolute;
     width: 0;
     height: 0;
-    left: 100px;
-    top: 90px;
+    left: 300px;
+    top: 190px;
     border: 25px solid;
     border-color: #223539 #223539 transparent transparent ;
+
 }
 
 p.speech:after {
@@ -44,10 +61,11 @@ p.speech:after {
     position: absolute;
     width: 0;
     height: 0;
-    left: 108px;
-    top: 84px;
+    left: 308px;
+    top: 184px;
     border: 15px solid;
-    border-color: #fff #fff transparent transparent;
+    /* border-color: #88ceb2 #88ceb2 transparent transparent; */
+    border-color: white white transparent transparent ;
 }
 
 .fab-btn-play {
@@ -113,7 +131,6 @@ p.speech:after {
 .glyphicon {
     line-height: 1.45;
 }
-
 
 .slider {
     overflow-y: hidden;

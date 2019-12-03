@@ -1,0 +1,86 @@
+<!--
+Author: Sandya Manoharan
+Date modified: 11/28/2019
+ -->
+
+{% extends "layout.html"%}
+{% block title %}
+<title>MatHub - Profile</title>
+{% endblock %}
+
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/teacherprofile.js') }}"></script>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/profile.css')}}">
+{% endblock %}
+
+{% include 'includes/_navbar.html' %}
+
+{% block body %}
+<h1> Teacher Profile </h1>
+<div class="row dynamic-margin">
+    <div class="col-xs-2 col-xs-offset-2">
+        <img class="img-responsive" src="{{ url_for('static', filename='img/teacherprofile.png') }}" alt="MatHub">
+        <div class="row">
+            <h2 class="col-xs-1 col-xs-offset-0" id="Email"> Email </h2>
+             <h2 id="email" class="col-xs-3 col-xs-offset-4"> {{username}} </h2>
+        </div>
+        <div class="row">
+            <h2 class="col-xs-1 col-xs-offset-0" id="Grade"> Class assigned </h2>
+             <h2 id="class" class="col-xs-3 col-xs-offset-4"> xyz </h2>
+        </div>
+    </div>
+
+    <div class="col-xs-2 col-xs-offset-3">
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23009688&amp;ctz=America%2FPhoenix&amp;src=ajVwZmdxNHNiODN2bTkxZ3Noczc3dTJ2ZDhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23871111" style="border-width:0" width="500" height="500" frameborder="0" scrolling="no"></iframe>
+    </div>
+</div>
+
+<!-- <div class="row">
+    <h2 class="col-xs-1 col-xs-offset-5" id="Email"> Email </h2>
+     <h2 id="email" class="col-xs-3 col-xs-offset-0"> {{username}} </h2>
+</div>
+<div class="row">
+    <h2 class="col-xs-1 col-xs-offset-5" id="Grade"> Class assigned </h2>
+     <h2 id="class" class="col-xs-3 col-xs-offset-0"> xyz </h2>
+</div> -->
+
+<!-- <div class="container" id="table_div">
+  <table class="table table-striped" id="AssignmentTable">
+  <!-- <table class="table table-striped"> -->
+  <!-- <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Assignment</th>
+      <th scope="col">Uploading Due Date</th>
+
+    </tr>
+  </thead>
+</table>
+</div> --> -->
+<!-- <div class="container">
+  <h2>Progress Bar</h2>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+      <span class="sr-only">70% Complete</span>
+    </div>
+  </div>
+</div> -->
+
+<div class="row" id="buttons">
+<a href="{{ url_for('create_assignment') }}" id="create-ass-btn" class="btn btn-default btn-board col-xs-offset-4 col-xs-2">Create Assignment</a>
+</div>
+
+<div class="row" id="buttons">
+<a href="{{ url_for('view_assignment') }}" id="view-ass-btn" class="btn btn-default btn-board col-xs-offset-4 col-xs-2">View Assignment</a>
+</div>
+
+<div class="row" id="buttons">
+    <a href="{{ url_for('charts') }}" id="graph-btn" class="btn btn-default btn-board col-xs-offset-4 col-xs-2">Grade Graph</a>
+</div>
+
+
+{% endblock %}

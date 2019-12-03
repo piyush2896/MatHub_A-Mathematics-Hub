@@ -1,0 +1,49 @@
+/*
+Author: Sandya Manoharan
+Date modified: 11/18/2019
+*/
+
+@font-face {
+   font-family: myFirstFont;
+   src: url(../resources/USBI.ttf);
+}
+* {
+   font-family: myFirstFont;
+}
+
+h1{
+  text-align: center;
+}
+
+#myTable{
+  color: black;
+}
+
+#remove-btn{
+  font-size: 1.3em;
+  width:20%;
+  background-color: #213534;
+  /* color: #213534;   */
+}
+
+#edit-btn{
+  font-size: 1.3em;
+  width:20%;
+  background-color: #213534;
+}
+
+#buttons{
+  text-align: center;
+
+}
+
+#piechart{
+  padding-top: 4%;
+  padding-left: 2%;
+  text-align: center;
+}
+
+body {
+    overflow: auto;
+   background-color:#88ceb2;
+}

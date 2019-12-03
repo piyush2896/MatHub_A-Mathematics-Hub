@@ -1,6 +1,11 @@
+/*
+Author: Amudhan Manisekaran
+Date modified: 11/18/2019
+*/
+
 @font-face {
    font-family: myFirstFont;
-   src: url(static/resources/USBI.ttf);
+   src: url('/static/resources/USBI.ttf');
 }
 
 * {
@@ -8,23 +13,36 @@
 }
 
 body {
+    overflow: auto;
    background-color:#88ceb2;
 }
 
 #login-btn {
    background-color:#213334;
    text-align:center;
+   margin-left: 30%;
    margin-bottom: 3%;
+   /* margin-left: 10%; */
    font-size: 2.2em;
+   /* width: 40%; */
+   height: 10%;
 }
 
-#singup-btn {
-   background-color:#213334; 
+.form-control{
+  font-size: 1em;
+}
+
+#admin-login-btn {
+   background-color:#213334;
+   width: 50%;
+   height: 50%;
+   font-size: 1em;
 }
 
 #form {
    border: 3px solid;
    box-shadow: 5px 5px 5px #213334;
+   font-size: 2em;
 }
 
 .email {
@@ -37,29 +55,93 @@ body {
 }
 
 .signup {
-   margin-top: 2%;
+   font-size: 1.5em;
 }
 
 .radios{
    margin-top: 1%;
+   font-size: 0.75em;
+   /* font-size: 1em; */
 }
+
 
 .radio {
    display: inline;
+   margin-left: 5%;
 }
 
 @media only screen and (max-width: 470px){
    .log-head{
-      font-size: 1.4em;
+      font-size: 2em;
+   }
+
+   #form {
+      font-size: 4em;
+      height: 50%;
+      width: auto;
+      margin-left: 10%;
+   }
+
+   .signup{
+     font-size: 1.2em;
+   }
+
+   #LoginToMathub{
+     font-size: 2em;
+   }
+
+   .radio{
+     font-size: 1.5em;
+   }
+
+   #admin-login-btn{
+     width: 140%;
+     height: auto;
    }
 }
 
 @media only screen and (max-width: 3800px){
    #singup-btn {
-      font-size: 0.9em;
+      font-size: 0.7em;
    }
 
    #login-btn {
-      font-size: 0.9em;
+      font-size: 0.7em;
    }
+}
+
+@media only screen and (max-width: 968px){
+  #logo{
+    width:20%;
+  }
+
+  #admin_login{
+      font-size: 2em;
+  }
+
+  #form {
+     font-size: 1.2em;
+     height: 50%;
+     width: auto;
+     margin-right: 13%;
+  }
+
+  .radio{
+    font-size: 1.5em;
+  }
+
+  #admin-login-btn{
+    width: 140%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 376px){
+  #logo{
+    width:25%;
+  }
+
+  #admin_login{
+      font-size: 10em;
+  }
 }

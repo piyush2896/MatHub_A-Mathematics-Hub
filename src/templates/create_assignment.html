@@ -1,0 +1,60 @@
+<!--
+Author: Sandya Manoharan
+Date modified: 11/18/2019
+ -->
+
+{% extends "layout.html"%}
+{% block title %}
+<title>MatHub - Create Assignment</title>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/create_assignment.css')}}">
+{% endblock %}
+
+{% include 'includes/_navbar.html' %}
+
+{% block body %}
+
+<div class="row">
+    <h1> Create Assignment </h1>
+</div>
+
+<div class="row" id="form">
+    <div class="col-xs-10 col-xs-offset-1" id="form">
+        <div id="questions"></div>
+
+        <div class="row">
+            <div class="form-group col-xs-4 col-xs-offset-2">
+                <label for="question">Assignment Name</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+            <div class="form-group col-xs-4 col-xs-offset-1">
+                <label for="question">Grade</label>
+                <input type="text" class="form-control" id="grade" name="grade">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-xs-6 col-xs-offset-3">
+                <label for="question">Question</label>
+                <input type="text" class="form-control" id="question" name="question">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-xs-6 col-xs-offset-3">
+                <label for="solution">Solution</label>
+                <input type="text" class="form-control" id="solution" name="solution">
+            </div>
+        </div>
+        <button id="create-user-btn" class="btn btn-primary col-xs-3 col-xs-offset-5">Create User</button>
+        <button id="add-btn" class="btn btn-primary col-xs-3 col-xs-offset-5" style="margin-top:2%">Add
+            Question</button>
+    </div>
+</div>
+
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/restful_call.js') }}"></script>
+<script src="{{ url_for('static', filename='js/create_assignment.js') }}"></script>
+{% endblock%}
+{% endblock %}

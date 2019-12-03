@@ -1,3 +1,8 @@
+/*
+Author: Amudhan Manisekaran
+Date modified: 11/23/2019
+*/
+
 @font-face {
    font-family: myFirstFont;
    src: url(../resources/USBI.ttf);
@@ -9,7 +14,8 @@
 
 body
 {
-background-color:#88ceb2;
+    overflow: auto;
+    background-color:#88ceb2;
 }
 
 h2{
@@ -21,19 +27,80 @@ text-align:center;
 position:relative;
 left:47%;
 }
-#a
-{
-background-color:#213334; 
-padding-right:10%; 
+
+#CreateUserHead{
+  /* margin-left: 1%; */
+}
+
+#form{
+    font-size: 1.3em;
+}
+
+#extra-details{
+    font-size: 0.6em;
+}
+
+#logo{
+  max-width:5%;
+  height:auto;
+  margin-left: 36%;
+}
+
+.form-control{
+    font-size: 1.3em;
+}
+
+#usertype{
+  font-size: 0.8em;
+}
+
+/* #a{
+background-color:#213334;
+padding-right:10%;
 padding-left:10%;
 text-align:center;
 position:relative;
 left:40%;
-}
+} */
 
-#create-user-btn {
+#create-user-btn, #reset-btn {
    background-color:#213334;
    text-align:center;
-   margin-bottom: 3%;
-   font-size: 2.2em;
+   margin-bottom: 1.5%;
+   font-size: 1em;
+}
+
+@media only screen and (max-width: 870px){
+  #logo{
+    max-width: 40%;
+    height: auto;
+  }
+
+  #create-user-btn, #reset-btn {
+     background-color:#213334;
+     text-align:center;
+     width: 40%;
+     margin-left: 40%;
+     font-size: 1.2em;
+  }
+
+  #username, #name, #password, #conf_password{
+    margin-right: 40%;
+    width:140%;
+  }
+
+  #CreateUserHead{
+   font-size: 1.5em;
+   margin-left: 22%;
+  }
+}
+
+@media only screen and (max-width: 520px){
+    #create-user-btn, #reset-btn {
+      font-size: 0.8em;
+    }
+
+    #usertype{
+      font-size: 0.5em;
+    }
 }

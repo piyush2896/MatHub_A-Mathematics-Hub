@@ -1,10 +1,20 @@
-font-face {
+/*
+Author: Amudhan Manisekaran
+Date modified: 11/18/2019
+*/
+
+@font-face {
    font-family: myFirstFont;
-   src: url(/static/resources/USBI.ttf);
+   src: url('/static/resources/USBI.ttf');
 }
+
 
 * {
    font-family: myFirstFont;
+}
+
+body{
+    overflow: auto;
 }
 
 .container-fluid {
@@ -15,26 +25,33 @@ font-face {
   background-color:#213534;
   font-size: 140%;
   width: 100%;
+  /* font-family: myFirstFont; */
   text-align: center;
 }
 
 .mathub-h1 {
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 #separator-block
 {
-  background-image:url('/static/img/bg.jpg');
+  background-image:url('/static/img/bg3.jpg');
   height:100vh;
+  background-size: cover;
+}
+
+#textfields{
+  color: white;
 }
 
 #login-block
 {
   background-color:#88ceb2;
   height:100vh;
+  /* margin-top: 20vh; */
 }
 
-@media only screen and (max-width: 1123px){
+@media only screen and (max-width: 1197px){
   #login-block {
     width: 100%;
     height: 100vh;
@@ -47,12 +64,20 @@ font-face {
 
 @media only screen and (max-width: 563px){
   .mathub-h1 {
-    font-size: 2em;
+    font-size: 3em;
+  }
+
+  #logo{
+    width:30%;
   }
 }
 
 @media only screen and (max-width: 391px){
   .mathub-h1 {
-    font-size: 1.5em;
+    font-size: 3em;
+  }
+
+  #logo{
+    width:30%;
   }
 }

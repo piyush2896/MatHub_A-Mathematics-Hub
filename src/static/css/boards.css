@@ -1,18 +1,19 @@
+/*
+Author: Amudhan Manisekaran
+Date modified: 11/18/2019
+*/
+
 @font-face {
    font-family: myFirstFont;
-   src: url(static/resources/USBI.ttf);
+   src: url(../resources/USBI.ttf);
 }
 
 * {
    font-family: myFirstFont;
 }
 
-html {
-overflow: hidden;
-}
-
-
 body {
+    overflow: auto;
    background-color:#88ceb2;
 }
 
@@ -40,6 +41,7 @@ body {
    .dynamic-margin {
       margin-top: 10%;
    }
+
 }
 
 @media only screen and (max-width: 520px){
@@ -47,10 +49,13 @@ body {
       font-size: 1.1em;
       margin-top: 5%;
    }
+
 }
 
-@media only screen and (max-width: 430px){
+@media only screen and (max-width: 470px){
    .btn-board {
       margin-top: 5%;
+        font-size: 1.1em;
    }
+
 }

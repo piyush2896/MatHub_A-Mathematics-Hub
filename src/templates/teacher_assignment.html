@@ -1,0 +1,38 @@
+<!--
+Author: Sandya Manoharan
+Date modified: 11/28/2019
+ -->
+
+{% extends "layout.html"%}
+{% block title %}
+<title>MatHub - Assignment</title>
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/teacherprofile.js') }}"></script>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/assignment.css')}}">
+{% endblock %}
+
+{% include 'includes/_navbar.html' %}
+
+{% block body %}
+<h1> Assignments </h1>
+
+<div class="container" id="table_div">
+  <table class="table table-striped" id="AssignmentTable">
+  <!-- <table class="table table-striped"> -->
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Assignment</th>
+      <th scope="col">Uploading Due Date</th>
+
+    </tr>
+  </thead>
+</table>
+  </div>
+
+{% endblock %}
