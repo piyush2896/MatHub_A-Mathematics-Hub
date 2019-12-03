@@ -68,7 +68,7 @@ def profile():
                 username=flask.session['client']['username'])
     return flask.redirect(flask.url_for('login'))
 
-@app.route('/create_assignment')
+@app.route('/create_assignment', methods = ['POST', 'GET'])
 def create_assignment():
     if 'logged_in' in flask.session and flask.session['logged_in']:
         if 'usertype' in flask.session and flask.session['usertype'] == actors.TEACHER:
