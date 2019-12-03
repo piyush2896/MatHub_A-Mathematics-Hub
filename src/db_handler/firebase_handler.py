@@ -144,3 +144,8 @@ class FirebaseEntryPoint:
             FirebaseEntryPoint.FIREBASE_URL + firebase_url +
             '/' + str(data['grade']) + '/' + '_'.join(data['name'].split()) + '.json',
             data=json.dumps(data))
+
+    def retrieve_assignments_for_grade(self, firebase_url, grade):
+        assignments = requests.get(
+            FirebaseEntryPoint.FIREBASE_URL + firebase_url + '/' + str(grade) + '.json')
+        return assignments.json()
