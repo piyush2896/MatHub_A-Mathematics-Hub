@@ -302,6 +302,16 @@ def reset_password():
             return flask.render_template('reset_password.html')
     return flask.redirect(flask.url_for('login'))
 
+@app.route('/assignments')
+def assignments():
+    if 'logged_in' in flask.session and flask.session['logged_in']:
+        fb_handler = fb_handle.FirebaseEntryPoint.create()
+        assigns = fb_handler.retrieve_assignments_for_grade(
+            '/Assignment', flask.session['client']['grade'])
+        flask.session['client']['assignments'] = assigns
+        return flask.render_template('assignments.html')
+    return flask.redirect(flask.url_for('login'))
+    
 if __name__ == '__main__':
     app.secret_key = "mathub-ser515"
     app.run(host='0.0.0.0', port=3000, debug=True)
