@@ -72,6 +72,12 @@ def profile():
 def create_assignment():
     if 'logged_in' in flask.session and flask.session['logged_in']:
         if 'usertype' in flask.session and flask.session['usertype'] == actors.TEACHER:
+            if flask.request.method == 'POST':
+                data = flask.request.get_json()
+                print('HERE', data)
+                fb_handler = fb_handle.FirebaseEntryPoint.create()
+                fb_handler.add_assignment('/Assignment', data)
+                return flask.jsonify({'result': 'success'})
             return flask.render_template('create_assignment.html')
     return flask.redirect(flask.url_for('login'))
 
