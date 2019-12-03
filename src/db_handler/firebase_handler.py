@@ -138,3 +138,9 @@ class FirebaseEntryPoint:
         requests.put(
             self.__make_url(firebase_url, username),
             data=json.dumps(data))
+
+    def add_assignment(self, firebase_url, data):
+        requests.post(
+            FirebaseEntryPoint.FIREBASE_URL + firebase_url +
+            '/' + str(data['grade']) + '/' + '_'.join(data['name'].split()) + '.json',
+            data=json.dumps(data))
