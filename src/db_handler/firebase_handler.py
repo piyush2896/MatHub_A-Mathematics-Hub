@@ -138,3 +138,8 @@ class FirebaseEntryPoint:
         requests.put(
             self.__make_url(firebase_url, username),
             data=json.dumps(data))
+        
+    def retrieve_assignments_for_grade(self, firebase_url, grade):
+        assignments = requests.get(
+            FirebaseEntryPoint.FIREBASE_URL + firebase_url + '/' + str(grade) + '.json')
+        return assignments.json()
