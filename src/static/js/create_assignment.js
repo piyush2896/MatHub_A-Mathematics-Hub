@@ -36,9 +36,9 @@ $(document).ready(function(){
 });
 
 function questionSolution2Html(question, solution){
-    questionHtml = '<div class="row"><div class="col-xs-6 col-xs-offset-3">' + question;
-    questionHtml += '</div></div>';
-    solutionHtml = '<div class="row"><div class="col-xs-6 col-xs-offset-3">' + solution;
+    questionHtml = '<div class="row"><div class="col-xs-4 text-center">' + question;
+    questionHtml += '</div>';
+    solutionHtml = '<div class="col-xs-6 col-xs-offset-4 col-xs-offset-1 text-center">' + solution;
     solutionHtml += '</div></div>';
     return questionHtml + solutionHtml
 }
